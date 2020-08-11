@@ -1,11 +1,18 @@
 const mongooseLoader = require('./mongoose')
+const server = require('./server')
 const services = require('../services')
+const config = require('../config')
 
 const logger = require('./logger')
 
 const loaders = async () => {
     await mongooseLoader()
     logger.info('mongoDB has been loaded!! Starting main services...')
+    
+    if (config.fakeServer === 'true') {
+        logger.info('Fake server for Heroku is running...')
+        server()
+    }
     await services.anime.start()
 }
 
