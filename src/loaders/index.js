@@ -9,6 +9,7 @@ const loaders = async () => {
     await mongooseLoader()
     logger.info('mongoDB has been loaded!! Starting main services...')
     
+    // For Heroku. Not to sleep 
     if (config.fakeServer === 'true') {
         logger.info('Fake server for Heroku is running...')
         server()

@@ -9,5 +9,6 @@ module.exports = {
     logLevel: process.env.LOG_LEVEL || 'info',
 
     fakeServer: process.env.FAKE_SERVER || 'false',
-    port: process.env.PORT || 5000
+    port: process.env.PORT || 5000,
+    appURL: process.env.APP_URL || ''
 }
