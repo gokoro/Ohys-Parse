@@ -25,7 +25,7 @@ module.exports.start = async function () {
         const isItemExist = await anime.isItemExist(list[0])
         
         if (!isItemExist) {
-            for (let columnSum = list.length - 1; columnSum > 0; columnSum--) {
+            for (let columnSum = list.length - 1; columnSum >= 0; columnSum--) {
                 await registerLogic(list[columnSum])
             }
         }
