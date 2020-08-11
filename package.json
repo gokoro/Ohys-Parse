@@ -1,0 +1,13 @@
+{
+  "name": "ohys-parse",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "author": "Gokoro <raycle1004@naver.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.9.28",
+    "winston": "^3.3.3"
+  }
+}
