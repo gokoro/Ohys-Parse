@@ -38,6 +38,10 @@ class Anime {
         
         const Items = await Model.findOne({name: form.name})
         
+        if (!Items) {
+            return false
+        }
+
         for (let i = 0; i < Items.items.length; i++) {
             if (Items.items[i].hash === form.info.hash) {
                 return true

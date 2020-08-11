@@ -22,7 +22,7 @@ module.exports.start = async function () {
         logger.info('Fetching ohys...')
 
         const list = await ohysFetch(0)
-        const isItemExist = anime.isItemExist(list[0])
+        const isItemExist = await anime.isItemExist(list[0])
         
         if (!isItemExist) {
             for (let columnSum = list.length - 1; columnSum > 0; columnSum--) {
