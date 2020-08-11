@@ -4,8 +4,15 @@
   "main": "src/app.js",
   "author": "Gokoro <raycle1004@naver.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "cross-env LOG_LEVEL=info node src/app.js",
+    "debug": "cross-env LOG_LEVEL=debug node src/app.js",
+    "debug-hard": "cross-env LOG_LEVEL=silly node src/app.js",
+    "slient": "cross-env LOG_LEVEL=error node src/app.js"
+  },
   "dependencies": {
     "axios": "^0.19.2",
+    "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "mongoose": "^5.9.28",
     "winston": "^3.3.3"
