@@ -15,6 +15,9 @@ const loaders = async () => {
         server()
     }
     await services.anime.start()
+
+    logger.info('Starting crawling ohys timetables...')
+    await services.timetable()
 }
 
 module.exports = loaders

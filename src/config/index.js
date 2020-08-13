@@ -10,5 +10,7 @@ module.exports = {
 
     fakeServer: process.env.FAKE_SERVER || 'false',
     port: process.env.PORT || 5000,
-    appURL: process.env.APP_URL || ''
+    appURL: process.env.APP_URL || '',
+
+    timetableURL: process.env.TIMETABLE_JSON_URL || null
 }
