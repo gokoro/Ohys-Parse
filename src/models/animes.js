@@ -23,6 +23,8 @@ const animeSchema = new mongoose.Schema({
     imageUrl: String,
     season: String,
     released_year: Number,
+    released_time: { type: String, default: null },
+    release_broadcaster: { type: String, default: null },
     items: [itemsSchema]
 })
 module.exports = mongoose.model('Anime', animeSchema)

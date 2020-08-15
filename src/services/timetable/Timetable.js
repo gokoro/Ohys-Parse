@@ -21,12 +21,18 @@ module.exports = class Timetable {
 
                 timetableModel.animes.push(fetchedAnime._id || null)
                 
-                this.updateAnimeTitleAsTimetable(
-                    item[i].title,
-                    item[i].ja_title,
-                    item[i].eng_title,
-                    item[i].kor_title,
-                )
+                const [ time, broadcaster ] = item[i].time.split(' ')
+
+                await this.updateAnimeTitleAsTimetable({
+                    title: {
+                        romaji: item[i].title,
+                        japanese: item[i].ja_title,
+                        english: item[i].eng_title,
+                        korean: item[i].kor_title,
+                    },
+                    released_time: time,
+                    release_broadcaster: broadcaster
+                })
 
                 logger.debug(`Timetable: Working ${item[i].title}...`)
                 
@@ -34,18 +40,7 @@ module.exports = class Timetable {
             await timetableModel.save()
         }    
     }
-    async updateAnimeTitleAsTimetable(...titles) {
-        const [romaji, japanese, english, korean] = titles
-
-        const animesForm = {
-            title: {
-                romaji,
-                japanese,
-                english,
-                korean
-            }
-        }
-        
-        await this.AnimeModel.findOneAndUpdate({name: romaji}, animesForm)
+    async updateAnimeTitleAsTimetable(form) {
+        await this.AnimeModel.findOneAndUpdate({name: form.title.romaji}, form)
     }
 }
