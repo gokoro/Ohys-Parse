@@ -33,8 +33,11 @@ const registerLogic = async fetched => {
         await anime.insertItem(
             fetched
         )
+        const anilistResponse = await fetchAnilist(fetched.name) 
+        delete anilistResponse.title
+
         await anime.updateSeriesInfo(
-            await fetchAnilist(fetched.name) 
+            anilistResponse
         )
         return
     }
