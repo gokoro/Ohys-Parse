@@ -70,6 +70,7 @@ module.exports = async animeTitle => {
                 title,
                 season,
                 seasonYear,
+                description,
                 coverImage: {
                     extraLarge: imageUrl
                 },
@@ -86,6 +87,7 @@ module.exports = async animeTitle => {
             japanese: title.native,
             english: title.english,
         },
+        description,
         imageUrl,
         season,
         released_year: seasonYear,
@@ -105,6 +107,7 @@ async function fetch(animeTitle) {
                     english
                     native
                 }
+                description
                 season
                 seasonYear
                 coverImage {

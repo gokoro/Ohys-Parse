@@ -23,6 +23,7 @@ const animeSchema = new mongoose.Schema({
     imageUrl: String,
     season: String,
     released_year: Number,
+    description: String,
     released_time: { type: String, default: null },
     release_broadcaster: { type: String, default: null },
     episode_info: [
