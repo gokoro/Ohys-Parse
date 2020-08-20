@@ -1,7 +1,6 @@
 const axios = require('axios').default
 
 const logger = require('../../loaders/logger')
-const { exists } = require('../../models/animes')
 
 module.exports = async animeTitle => {
     if (!animeTitle) {
@@ -73,7 +72,8 @@ module.exports = async animeTitle => {
                 seasonYear,
                 coverImage: {
                     extraLarge: imageUrl
-                }
+                },
+                streamingEpisodes: epsodeInfo
             }
         }
     } = response.data
@@ -89,6 +89,7 @@ module.exports = async animeTitle => {
         imageUrl,
         season,
         released_year: seasonYear,
+        episode_info: epsodeInfo
     }
 }
 
@@ -108,6 +109,10 @@ async function fetch(animeTitle) {
                 seasonYear
                 coverImage {
                     extraLarge
+                }
+                streamingEpisodes {
+                    title
+                    thumbnail
                 }
             }
         }
@@ -141,6 +146,10 @@ function nullForm(name) {
         },
         imageUrl: null,
         season: null,
-        released_year: null
+        released_year: null,
+        episode_info: {
+            title: null,
+            thumbnail: null,
+        }    
     }
 }

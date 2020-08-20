@@ -33,6 +33,9 @@ const registerLogic = async fetched => {
         await anime.insertItem(
             fetched
         )
+        await anime.updateSeriesInfo(
+            await fetchAnilist(fetched.name) 
+        )
         return
     }
 }

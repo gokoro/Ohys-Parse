@@ -49,5 +49,10 @@ class Anime {
         }
         return false
     }
+    async updateSeriesInfo(form) {
+        const Model = this.Model
+
+        await Model.findOneAndUpdate({name: form.name}, form)
+    }
 }
 module.exports = Anime
