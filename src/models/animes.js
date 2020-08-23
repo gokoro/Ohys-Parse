@@ -21,6 +21,8 @@ const animeSchema = new mongoose.Schema({
         korean: { type: String, default: null }
     },
     imageUrl: String,
+    smallImageUrl: String,
+    color: String,
     season: String,
     released_year: Number,
     description: String,
