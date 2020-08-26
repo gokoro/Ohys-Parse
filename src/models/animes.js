@@ -22,6 +22,7 @@ const animeSchema = new mongoose.Schema({
     },
     imageUrl: String,
     smallImageUrl: String,
+    bannerImage: String,
     color: String,
     season: String,
     released_year: Number,

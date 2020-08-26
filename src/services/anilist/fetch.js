@@ -76,6 +76,7 @@ module.exports = async animeTitle => {
                     large: smallImageUrl,
                     color: color
                 },
+                bannerImage,
                 streamingEpisodes: epsodeInfo
             }
         }
@@ -89,9 +90,10 @@ module.exports = async animeTitle => {
             japanese: title.native,
             english: title.english,
         },
-        description,
+        description: description.replace(/<[^>]*>/g, ''),
         imageUrl,
         smallImageUrl,
+        bannerImage,
         color,
         season,
         released_year: seasonYear,
@@ -119,6 +121,7 @@ async function fetch(animeTitle) {
                     large
                     color
                 }
+                bannerImage
                 streamingEpisodes {
                     title
                     thumbnail
@@ -155,6 +158,7 @@ function nullForm(name) {
         },
         imageUrl: null,
         smallImageUrl: null,
+        bannerImage: null,
         color: null,
         season: null,
         released_year: null,
