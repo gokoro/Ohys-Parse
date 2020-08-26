@@ -90,7 +90,7 @@ module.exports = async animeTitle => {
             japanese: title.native,
             english: title.english,
         },
-        description: description.replace(/<[^>]*>/g, ''),
+        description: (description || '').replace(/<[^>]*>/g, ''),
         imageUrl,
         smallImageUrl,
         bannerImage,
