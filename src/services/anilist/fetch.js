@@ -27,23 +27,20 @@ module.exports = async animeTitle => {
         }
 
         const titleForHandleException = animeTitle.split(' ')
-        let handledTitleCount = titleForHandleException.length - 1
         
         while (true) {
-            let handledTitle = ''
+            titleForHandleException.pop()
 
-            for (let i = 0, l = handledTitleCount; i < l; i++) {
-                handledTitle = handledTitle + ' ' + titleForHandleException[i]
-            }
-            logger.debug('Retrieving for anilist with title: ' + handledTitle)
+            const splitedTitle = [...titleForHandleException].join(' ')
 
-            response = await fetch(handledTitle)
+            logger.debug('Retrieving for anilist with title: ' + splitedTitle)
+
+            response = await fetch(splitedTitle)
 
             if (!response.data.hasOwnProperty('errors')) {
                 logger.debug('Retrieving successed!')
                 break
             }
-            handledTitleCount--
         }
     }
 
