@@ -2,7 +2,7 @@
   "name": "ohys-parse",
   "version": "1.0.0",
   "main": "src/app.js",
-  "author": "Gokoro <raycle1004@naver.com>",
+  "author": "Gokoro <lincroe@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "cross-env LOG_LEVEL=info node src/app.js",
