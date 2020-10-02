@@ -1,9 +1,12 @@
+const fetchAnilist = require('../anilist/fetch')
+
 const logger = require('../../loaders/logger')
 
-module.exports = class Timetable {
-    constructor(AnimeModel, TimetableModel) {
+module.exports = class {
+    constructor(AnimeModel, TimetableModel, Anime) {
         this.AnimeModel = AnimeModel
         this.TimetableModel = TimetableModel
+        this.anime = new Anime(AnimeModel)
     }
 
     async insertTable(response) {
@@ -17,13 +20,21 @@ module.exports = class Timetable {
             const item = response[day]
     
             for (let i = 0; i < item.length; i++) {
+                const isSeriesExist = await this.anime.isSeriesExist(item[i].title)
+
+                if (!isSeriesExist) {
+                    await this.anime.insertSeries(
+                        await fetchAnilist(item[i].title)
+                    )
+                }
+
                 const fetchedAnime = await this.AnimeModel.findOne({name: item[i].title}).select('_id') || {}
 
                 timetableModel.animes.push(fetchedAnime._id || null)
                 
                 const [ time, broadcaster ] = item[i].time.split(' ')
 
-                await this.updateAnimeTitleAsTimetable({
+                await this.updateTable({
                     title: {
                         romaji: item[i].title,
                         japanese: item[i].ja_title,
@@ -40,7 +51,7 @@ module.exports = class Timetable {
             await timetableModel.save()
         }    
     }
-    async updateAnimeTitleAsTimetable(form) {
+    async updateTable(form) {
         await this.AnimeModel.findOneAndUpdate({name: form.title.romaji}, form)
     }
 }

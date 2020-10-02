@@ -5,7 +5,7 @@ const logger = require('../../loaders/logger')
 
 const collectAll = async () => {
     const list = []
-    let page = 0
+    let page = 50
 
     while (true) {
         const fetched = await fetch(page)
