@@ -1,5 +1,6 @@
-const axios = require('axios').default
 const config = require('../../config')
+
+const table = require(`../../assets/${config.season}.json`)
 
 // Model
 const AnimeModel = require('../../models/animes')
@@ -8,28 +9,15 @@ const TimetableModel = require('../../models/timetable')
 // Class
 const Timetable = require('./Timetable')
 
-const logger = require('../../loaders/logger')
-
 module.exports = async () => {
     const timetable = new Timetable(AnimeModel, TimetableModel)
+
+    if (typeof timetable !== 'object') {
+        throw new Error('The file that contains information of the timetable is invalid.')
+    }
 
     // Reset the timetable collection
     await TimetableModel.deleteMany({})
 
-    await timetable.insertTable(
-        await fetch(config.timetableURL)
-    )
-}
-
-async function fetch (url) {
-    try {
-        const response = await axios(url)
-        
-        return response.data
-    } catch (error) {
-        logger.error('Fetching timetables failed : ' + error)
-        
-        return null
-    }
-
+    await timetable.insertTable(table)
 }

@@ -1,0 +1,366 @@
+{
+    "mon": [
+        {
+            "title": "Ochikobore Fruit Tart",
+            "eng_title": "Dropout Idol Fruit Tart",
+            "kor_title": "뒤떨어진 후르츠 타르트",
+            "ja_title": "おちこぼれフルーツタルト",
+            "time": "21:30 AT-X"
+        },
+        {
+            "title": "Golden Kamuy (2020)",
+            "eng_title": "Golden Kamuy 3",
+            "kor_title": "골든 카무이 3기",
+            "ja_title": "ゴールデンカムイ 第三期",
+            "time": "23:00 BS11/MX"
+        }
+    ],
+    "tue": [
+        {
+            "title": "One Room: Third Season",
+            "eng_title": "One Room 3",
+            "kor_title": "One Room 시즌 3",
+            "ja_title": "One Room サードシーズン",
+            "time": "01:05 MX"
+        },
+        {
+            "title": "Osomatsu-san 3",
+            "eng_title": "Mr. Osomatsu 3rd Season",
+            "kor_title": "오소마츠 상 3기",
+            "ja_title": "おそ松さん 第3期",
+            "time": "01:30 TX"
+        },
+        {
+            "title": "Black Clover",
+            "eng_title": "Black Clover",
+            "kor_title": "블랙 클로버",
+            "ja_title": "ブラッククローバー",
+            "time": "18:25 TX"
+        },
+        {
+            "title": "Ikebukuro West Gate Park",
+            "eng_title": "Ikebukuro West Gate Park",
+            "kor_title": "이케부쿠로 웨스트 게이트 파크",
+            "ja_title": "池袋ウエストゲートパーク",
+            "time": "21:00 AT-X"
+        },
+        {
+            "title": "Bang Dream! Garupa Pico Oomori",
+            "eng_title": "BanG Dream! Garupa☆Pico: Oomori",
+            "kor_title": "BanG Dream! 걸파☆피코 곱빼기",
+            "ja_title": "BanG Dream! ガルパ☆ピコ～大盛り～",
+            "time": "21:30 AT-X"
+        },
+        {
+            "title": "Sore dake ga Neck",
+            "eng_title": "Sore dake ga Neck",
+            "kor_title": "그것만이 넥",
+            "ja_title": "それだけがネック",
+            "time": "21:50 AT-X"
+        },
+        {
+            "title": "Maou-jou de Oyasumi",
+            "eng_title": "Sleepy Princess in the Demon Castle",
+            "kor_title": "마왕성에서 잘 자요",
+            "ja_title": "魔王城でおやすみ",
+            "time": "22:00 AT-X"
+        },
+        {
+            "title": "Magatsu Wahrheit: Zuerst",
+            "eng_title": "Magatsu Wahrheit: Zuerst",
+            "kor_title": "불길한 바르하이트 -ZUERST-",
+            "ja_title": "禍つヴァールハイト -ZUERST-",
+            "time": "23:00 MX"
+        }
+    ],
+    "wed": [
+        {
+            "title": "Kuma Kuma Kuma Bear",
+            "eng_title": "The Bears Bear a Bare Kuma",
+            "kor_title": "곰 곰 곰 베어",
+            "ja_title": "くまクマ熊ベアー",
+            "time": "21:00 AT-X"
+        },
+        {
+            "title": "Dogeza de Tanondemita",
+            "eng_title": "I Tried Asking In Dogeza",
+            "kor_title": "도게자로 부탁해봤다",
+            "ja_title": "土下座で頼んでみた",
+            "time": "23:05 AT-X"
+        },
+        {
+            "title": "Kimi to Boku no Saigo no Senjou, Arui wa Sekai ga Hajimaru Seisen",
+            "eng_title": "Our Last Crusade or the Rise of a New World",
+            "kor_title": "너와 나의 최후의 전장, 혹은 세계가 시작되는 성전",
+            "ja_title": "キミと僕の最後の戦場、あるいは世界が始まる聖戦",
+            "time": "23:30 AT-X"
+        }
+    ],
+    "thu": [
+        {
+            "title": "Noblesse",
+            "eng_title": "Noblesse",
+            "kor_title": "노블레스",
+            "ja_title": "NOBLESSE -ノブレス-",
+            "time": "00:00 MX"
+        },
+        {
+            "title": "Great Pretender",
+            "eng_title": "GREAT PRETENDER",
+            "kor_title": "그레이트 프리텐더",
+            "ja_title": "GREAT PRETENDER",
+            "time": "00:55 CX"
+        },
+        {
+            "title": "Dai 501 Tougou Sentou Koukuu Dan Strike Witches: Road to Berlin",
+            "eng_title": "Strike Witches: Road to Berlin",
+            "kor_title": "제501통합전투항공단 스트라이크 위치스 ROAD to BERLIN",
+            "ja_title": "ストライクウィッチーズ ROAD to BERLIN",
+            "time": "01:05 MX"
+        },
+        {
+            "title": "Akudama Drive",
+            "eng_title": "Akudama Drive",
+            "kor_title": "아쿠다마 드라이브",
+            "ja_title": "アクダマドライブ",
+            "time": "21:30 AT-X"
+        },
+        {
+            "title": "Guraburu!",
+            "eng_title": "Guraburu!",
+            "kor_title": "그라부룻!",
+            "ja_title": "ぐらぶるっ！",
+            "time": "21:54 BS11/MX"
+        },
+        {
+            "title": "King`s Raid: Ishi o Tsugu Mono-tachi",
+            "eng_title": "King's Raid: Successors of the Will",
+            "kor_title": "킹스레이드: 의지를 잇는 자들",
+            "ja_title": "キングスレイド 意志を継ぐものたち",
+            "time": "23:00 AT-X"
+        },
+        {
+            "title": "Higurashi no Naku Koro ni (2020)",
+            "eng_title": "Higurashi: When They Cry - New",
+            "kor_title": "쓰르라미 울 적에",
+            "ja_title": "ひぐらしのなく頃に",
+            "time": "23:30 BS11/MX"
+        }
+    ],
+    "fri": [
+        {
+            "title": "Mewkledreamy",
+            "eng_title": "Mewkledreamy",
+            "kor_title": "뮤클드리미",
+            "ja_title": "ミュークルドリーミー",
+            "time": "00:00 AT-X"
+        },
+        {
+            "title": "Assault Lily: Bouquet",
+            "eng_title": "Assault Lily: Bouquet",
+            "kor_title": "어설트 릴리 BOUQUET",
+            "ja_title": "アサルトリリィ BOUQUET",
+            "time": "01:28 TBS"
+        },
+        {
+            "title": "Adachi to Shimamura",
+            "eng_title": "Adachi and Shimamura",
+            "kor_title": "아다치와 시마무라",
+            "ja_title": "安達としまむら",
+            "time": "01:58 TBS"
+        },
+        {
+            "title": "Majo no Tabitabi",
+            "eng_title": "The Journey of Elaina",
+            "kor_title": "마녀의 여행",
+            "ja_title": "魔女の旅々",
+            "time": "21:00 AT-X"
+        },
+        {
+            "title": "100-man no Inochi no Ue ni Ore wa Tatte Iru",
+            "eng_title": "I'm standing on 1,000,000 lives",
+            "kor_title": "나는 100만 명의 목숨 위에 서 있다",
+            "ja_title": "100万の命の上に俺は立っている",
+            "time": "22:00 MX"
+        },
+        {
+            "title": "Dragon Quest: Dai no Daibouken (2020)",
+            "eng_title": "Dragon Quest: Dai's Great Adventure",
+            "kor_title": "드래곤 퀘스트: 다이의 대모험",
+            "ja_title": "ドラゴンクエスト ダイの大冒険",
+            "time": "22:30 AT-X"
+        },
+        {
+            "title": "D4DJ: First Mix",
+            "eng_title": "D4DJ: First Mix",
+            "kor_title": "D4DJ First Mix",
+            "ja_title": "D4DJ First Mix",
+            "time": "23:00 AT-X/BS/MX"
+        }
+    ],
+    "sat": [
+        {
+            "title": "Dungeon ni Deai o Motomeru no wa Machigatte Iru Darouka: Familia Myth III",
+            "eng_title": "Is It Wrong to Try to Pick Up Girls in a Dungeon? III",
+            "kor_title": "던전에서 만남을 추구하면 안 되는 걸까 3",
+            "ja_title": "ダンジョンに出会いを求めるのは間違っているだろうかIII",
+            "time": "00:30 BS11/MX"
+        },
+        {
+            "title": "Rail Romanesque",
+            "eng_title": "Rail Romanesque",
+            "kor_title": "레일 로마네스크",
+            "ja_title": "レヱル・ロマネスク",
+            "time": "01:00 MX"
+        },
+        {
+            "title": "Tonikaku Kawaii",
+            "eng_title": "TONIKAWA: Over the Moon For You",
+            "kor_title": "어쨌든 귀여워",
+            "ja_title": "トニカクカワイイ",
+            "time": "01:05 MX"
+        },
+        {
+            "title": "Jujutsu Kaisen",
+            "eng_title": "Sorcery Fight",
+            "kor_title": "주술회전",
+            "ja_title": "呪術廻戦",
+            "time": "01:25 TBS/MBS"
+        },
+        {
+            "title": "Inu to Neko Docchi mo Katteru to Mainichi Tanoshii",
+            "eng_title": "With a Dog and a Cat, Every Day is Fun",
+            "kor_title": "개와 고양이 둘다 키우면 매일 즐거워",
+            "ja_title": "犬と猫どっちも飼ってると毎日たのしい",
+            "time": "01:50 TBS/MBS"
+        },
+        {
+            "title": "Haikyuu!! To the Top (2020)",
+            "eng_title": "Haikyuu!! (2020) 2nd Season",
+            "kor_title": "하이큐!! TO THE TOP",
+            "ja_title": "ハイキュー!! TO THE TOP 第2クール",
+            "time": "02:25 TBS/MBS"
+        },
+        {
+            "title": "Han`you no Yashahime: Sengoku Otogizoushi",
+            "eng_title": "Yashahime: Princess Half-Demon",
+            "kor_title": "반요 야샤히메",
+            "ja_title": "半妖の夜叉姫",
+            "time": "17:30 NTV"
+        },
+        {
+            "title": "Detective Conan",
+            "eng_title": "Detective Conan",
+            "kor_title": "명탐정 코난",
+            "ja_title": "名探偵コナン",
+            "time": "18:00 NTV"
+        },
+        {
+            "title": "Gochuumon wa Usagi Desuka? Bloom",
+            "eng_title": "Is the Order a Rabbit? Bloom",
+            "kor_title": "주문은 토끼입니까? BLOOM",
+            "ja_title": "ご注文はうさぎですか？BLOOM",
+            "time": "21:30 AT-X"
+        },
+        {
+            "title": "Love Live! Nijigasaki Gakuen School Idol Doukoukai",
+            "eng_title": "Love Live! Nijigasaki High School Idol Club",
+            "kor_title": "러브 라이브! 니지가사키 학원 스쿨 아이돌 동호회",
+            "ja_title": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
+            "time": "22:30 MX/KBS/SUN"
+        },
+        {
+            "title": "Sen`yoku no Sigrdrifa",
+            "eng_title": "Warlords of Sigrdrifa",
+            "kor_title": "전익의 시그드리파",
+            "ja_title": "戦翼のシグルドリーヴァ",
+            "time": "23:30 BS11/MX"
+        }
+    ],
+    "sun": [
+        {
+            "title": "Kamisama ni Natta Hi",
+            "eng_title": "The Day I Became a God",
+            "kor_title": "신이 된 날",
+            "ja_title": "神様になった日",
+            "time": "00:00 BS11/MX"
+        },
+        {
+            "title": "Mahouka Koukou no Rettousei: Raihousha Hen",
+            "eng_title": "The Irregular at Magic High School: Visitor Arc",
+            "kor_title": "마법과고교의 열등생: 방문자 편",
+            "ja_title": "魔法科高校の劣等生 来訪者編",
+            "time": "00:30 AT-X/BS11"
+        },
+        {
+            "title": "Gal to Kyouryuu",
+            "eng_title": "Gal & Dino",
+            "kor_title": "갸루와 공룡",
+            "ja_title": "ギャルと恐竜",
+            "time": "01:30 BS11/MX"
+        },
+        {
+            "title": "Taisou Zamurai",
+            "eng_title": "Gymnastics Samurai",
+            "kor_title": "체조 사무라이",
+            "ja_title": "体操ザムライ",
+            "time": "01:30 TX"
+        },
+        {
+            "title": "Healin` Good Precure",
+            "eng_title": "Healin' Good PreCure",
+            "kor_title": "힐링굿 프리큐어",
+            "ja_title": "ヒーリングっど♥プリキュア",
+            "time": "08:30 EX"
+        },
+        {
+            "title": "Digimon Adventure;",
+            "eng_title": "DIGIMON ADVENTURE:",
+            "kor_title": "디지몬 어드벤처:",
+            "ja_title": "デジモンアドベンチャー:",
+            "time": "09:00 CX"
+        },
+        {
+            "title": "Kiratto Pri-chan",
+            "eng_title": "Kiratto Pri-chan",
+            "kor_title": "키랏토 프리챤",
+            "ja_title": "キラッとプリ☆チャン シーズン2",
+            "time": "10:00 TX"
+        },
+        {
+            "title": "Munou na Nana",
+            "eng_title": "Talentless Nana",
+            "kor_title": "무능한 나나",
+            "ja_title": "無能なナナ",
+            "time": "21:30 AT-X"
+        },
+        {
+            "title": "Iwa Kakeru! Sport Climbing Girls",
+            "eng_title": "Hang On! Climbing Girls",
+            "kor_title": "이와카케루! -Sport Climbing Girl-",
+            "ja_title": "いわかける！- Sport Climbing Girls -",
+            "time": "22:00 AT-X"
+        },
+        {
+            "title": "Yuukoku no Moriarty",
+            "eng_title": "Moriarty the Patriot",
+            "kor_title": "우국의 모리아티",
+            "ja_title": "憂国のモリアーティ",
+            "time": "22:30 MX"
+        },
+        {
+            "title": "Maesetsu! Opening Act",
+            "eng_title": "Maesetsu! Opening Act",
+            "kor_title": "마에세츠!",
+            "ja_title": "まえせつ！",
+            "time": "23:30 AT-X"
+        },
+        {
+            "title": "Kami-tachi ni Hirowareta Otoko",
+            "eng_title": "By the Grace of the Gods",
+            "kor_title": "신들에게 주워진 남자",
+            "ja_title": "神達に拾われた男",
+            "time": "23:30 MX"
+        }
+    ]
+}

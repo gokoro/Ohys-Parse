@@ -1,0 +1,293 @@
+{
+    "result": true,
+    "season": "Season 2, 2020",
+    "created_by": "Cryental",
+    "created_copyright": "https://cryental.dev",
+    "based_on": {
+        "source": "https://raw.githubusercontent.com/ohyongslck/annie/master/2020%402",
+        "english_title": [
+            "MyAnimeList",
+            "AniDB",
+            "Wikipedia"
+        ],
+        "korean_title": [
+            "Namuwiki",
+            "Wikipedia"
+        ]
+    },
+    "database": {
+        "Monday": [
+            {
+                "title": "Shironeko Project: Zero Chronicle",
+                "eng_title": "White Cat Project: Zero Chronicle",
+                "kor_title": "하얀고양이 프로젝트: 제로 크로니클",
+                "ja_title": "白猫プロジェクト ZERO CHRONICLE",
+                "time": "22:00 AT-X"
+            },
+            {
+                "title": "Jashin-chan Dropkick`",
+                "eng_title": "Dropkick on My Devil!",
+                "kor_title": "사신 짱 드롭킥`",
+                "ja_title": "邪神ちゃんドロップキック’",
+                "time": "22:30 AT-X"
+            },
+            {
+                "title": "Princess Connect! Re:Dive",
+                "eng_title": "Princess Connect! Re:Dive",
+                "kor_title": "프린세스 커넥트! Re:Dive",
+                "ja_title": "プリンセスコネクト！Re:Dive",
+                "time": "24:30 BS11"
+            },
+            {
+                "title": "Fruits Basket (2020)",
+                "eng_title": "Fruits Basket (2020)",
+                "kor_title": "후르츠 바스켓 2",
+                "ja_title": "フルーツバスケット 2nd season",
+                "time": "25:30 TX"
+            }
+        ],
+        "Tuesday": [
+            {
+                "title": "Black Clover",
+                "eng_title": "Black Clover",
+                "kor_title": "블랙 클로버",
+                "ja_title": "ブラッククローバー",
+                "time": "18:25 TX"
+            },
+            {
+                "title": "Rebirth",
+                "eng_title": "Rebirth",
+                "kor_title": "리버스",
+                "ja_title": "りばあす",
+                "time": "19:30 MX"
+            },
+            {
+                "title": "Houkago Teibou Nisshi",
+                "eng_title": "Diary of Our Days at the Breakwater",
+                "kor_title": "방과 후 제방 일지",
+                "ja_title": "放課後ていぼう日誌",
+                "time": "22:30 AT-X"
+            }
+        ],
+        "Wednesday": [
+            {
+                "title": "Ahiru no Sora",
+                "eng_title": "Sky of the Duck",
+                "kor_title": "소라의 날개",
+                "ja_title": "あひるの空",
+                "time": "22:00 AT-X"
+            },
+            {
+                "title": "Tamayomi",
+                "eng_title": "Tamayomi",
+                "kor_title": "타마요이",
+                "ja_title": "球詠",
+                "time": "22:00 AT-X"
+            },
+            {
+                "title": "Tog",
+                "eng_title": "Tog",
+                "kor_title": "Tog",
+                "ja_title": "Tog",
+                "time": "24:30 BS11"
+            },
+            {
+                "title": "BNA",
+                "eng_title": "BNA",
+                "kor_title": "BNA",
+                "ja_title": "BNA ビー・エヌ・エー",
+                "time": "24:55 CX"
+            },
+            {
+                "title": "Plunderer",
+                "eng_title": "Plunderer",
+                "kor_title": "플런더러",
+                "ja_title": "プランダラ",
+                "time": "25:05 MX"
+            }
+        ],
+        "Thursday": [
+            {
+                "title": "Hachi-nan tte, Sore wa Nai deshou!",
+                "eng_title": "The 8th son? Are you kidding me?",
+                "kor_title": "팔남이라니, 그건 아니지!",
+                "ja_title": "八男って、それはないでしょう！",
+                "time": "21:00 AT-X"
+            },
+            {
+                "title": "Kakushigoto",
+                "eng_title": "Kakushigoto",
+                "kor_title": "카쿠시고토",
+                "ja_title": "かくしごと",
+                "time": "23:30 AT-X"
+            },
+            {
+                "title": "Mewkledreamy",
+                "eng_title": "Mewkledreamy",
+                "kor_title": "뮤클드리미",
+                "ja_title": "ミュークルドリーミー",
+                "time": "24:00 AT-X"
+            },
+            {
+                "title": "Fugou Keiji: Balance:Unlimited",
+                "eng_title": "The Millionaire Detective – Balance: UNLIMITED",
+                "kor_title": "부호형사 Balance:UNLIMITED",
+                "ja_title": "富豪刑事 Balance:UNLIMITED",
+                "time": "25:10 CX"
+            }
+        ],
+        "Friday": [
+            {
+                "title": "Appare Ranman!",
+                "eng_title": "Appare Ranman!",
+                "kor_title": "천청난만!",
+                "ja_title": "天晴爛漫！",
+                "time": "21:30 AT-X"
+            },
+            {
+                "title": "Toaru Kagaku no Railgun T",
+                "eng_title": "A Certain Scientific Railgun T",
+                "kor_title": "어떤 과학의 초전자포 T",
+                "ja_title": "とある科学の超電磁砲レールガンT.",
+                "time": "22:00 AT-X"
+            },
+            {
+                "title": "Shin Sakura Taisen the Animation",
+                "eng_title": "Sakura Wars the Animation",
+                "kor_title": "신 사쿠라 대전 the Animation",
+                "ja_title": "新サクラ大戦 the Animation",
+                "time": "22:00 MX"
+            },
+            {
+                "title": "Shokugeki no Souma: Gou no Sara",
+                "eng_title": "Food Wars! The Fifth Plate",
+                "kor_title": "식극의 소마 다섯 번째 접시",
+                "ja_title": "食戟のソーマ 豪ノ皿",
+                "time": "24:30 BS11"
+            },
+            {
+                "title": "Listeners",
+                "eng_title": "Listeners",
+                "kor_title": "리스너즈",
+                "ja_title": "LISTENERS リスナーズ",
+                "time": "25:55 TBS"
+            },
+            {
+                "title": "Nami yo Kiite Kure",
+                "eng_title": "Wave, Listen to Me!",
+                "kor_title": "파도여 들어다오",
+                "ja_title": "波よ聞いてくれ",
+                "time": "26:25 TBS"
+            }
+        ],
+        "Saturday": [
+            {
+                "title": "Detective Conan",
+                "eng_title": "Detective Conan",
+                "kor_title": "명탐정 코난",
+                "ja_title": "名探偵コナン",
+                "time": "18:00 NTV"
+            },
+            {
+                "title": "Argonavis from Bang Dream!",
+                "eng_title": "Argonavis from BanG Dream!",
+                "kor_title": "아르고네비스 프롬 뱅드림!",
+                "ja_title": "アルゴナビス from BanG Dream!",
+                "time": "20:00 AT-X"
+            },
+            {
+                "title": "Arte",
+                "eng_title": "Arte",
+                "kor_title": "아르테",
+                "ja_title": "アルテ",
+                "time": "22:00 MX"
+            },
+            {
+                "title": "Bungou to Alchemist: Shinpan no Haguruma",
+                "eng_title": "Bungou and Alchemist: Judgment Gear",
+                "kor_title": "문호와 알케미스트 ~심판의 톱니바퀴~",
+                "ja_title": "文豪とアルケミスト 審判ノ歯車",
+                "time": "23:00 AT-X"
+            },
+            {
+                "title": "Kaguya-sama wa Kokurasetai 2",
+                "eng_title": "Kaguya-sama: Love is War Season 2",
+                "kor_title": "카구야 님은 고백받고 싶어? ~천재들의 연애 두뇌전~ 2기",
+                "ja_title": "かぐや様は告らせたい？～天才たちの恋愛頭脳戦～",
+                "time": "23:30 BS11"
+            },
+            {
+                "title": "Gal to Kyouryuu",
+                "eng_title": "The Gal and the Dinosaur",
+                "kor_title": "갸루와 공룡",
+                "ja_title": "ギャルと恐竜",
+                "time": "25:00 BS11"
+            },
+            {
+                "title": "Yesterday o Utatte",
+                "eng_title": "Sing \"Yesterday\" for Me",
+                "kor_title": "예스터데이를 노래하며",
+                "ja_title": "イエスタデイをうたって",
+                "time": "25:30 EX"
+            },
+            {
+                "title": "Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei Shiteshimatta...",
+                "eng_title": "My Life as a Villainess: All Routes Lead to Doom!",
+                "kor_title": "여성향 게임의 파멸 플래그밖에 없는 악역 영애로 환생해버렸다...",
+                "ja_title": "乙女ゲームの破滅フラグしかない悪役令嬢に転生してしまった…",
+                "time": "25:30 BS11"
+            },
+            {
+                "title": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan o Erande Iraremasen (2020)",
+                "eng_title": "Ascendance of a Bookworm (2020)",
+                "kor_title": "책벌레의 하극상: 사서가 되기 위해서라면 뭐든지 할 수 있어 (2020)",
+                "ja_title": "本好きの下剋上 司書になるためには手段を選んでられません 第2部",
+                "time": "26:10 ABC"
+            }
+        ],
+        "Sunday": [
+            {
+                "title": "Healin` Good Precure",
+                "eng_title": "Healin' Good PreCure",
+                "kor_title": "힐링굿 프리큐어",
+                "ja_title": "ヒーリングっど♥プリキュア",
+                "time": "08:30 EX"
+            },
+            {
+                "title": "Digimon Adventure;",
+                "eng_title": "DIGIMON ADVENTURE:",
+                "kor_title": "디지몬 어드벤처:",
+                "ja_title": "デジモンアドベンチャー:",
+                "time": "09:00 CX"
+            },
+            {
+                "title": "Kiratto Pri-chan",
+                "eng_title": "Kiratto Pri-chan",
+                "kor_title": "키랏토 프리챤",
+                "ja_title": "キラッとプリ☆チャン シーズン2",
+                "time": "10:00 TX"
+            },
+            {
+                "title": "Tsugu Tsugumomo",
+                "eng_title": "Tsugumomo",
+                "kor_title": "츠구모모",
+                "ja_title": "継つぐもも",
+                "time": "21:30 AT-X"
+            },
+            {
+                "title": "Shachou, Battle no Jikan Desu!",
+                "eng_title": "Shachibato! President, It's Time for Battle!",
+                "kor_title": "사장님, 배틀 시간입니다!",
+                "ja_title": "社長、バトルの時間です！",
+                "time": "23:30 AT-X"
+            },
+            {
+                "title": "Gleipnir",
+                "eng_title": "Gleipnir",
+                "kor_title": "글레이프니르",
+                "ja_title": "グレイプニル",
+                "time": "23:30 BS11"
+            }
+        ]
+    }
+}
