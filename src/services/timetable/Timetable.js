@@ -16,7 +16,6 @@ module.exports = class {
             const timetableModel = new this.TimetableModel()
     
             timetableModel.day = day
-            timetableModel.animes = []
 
             const item = response[day]
     
@@ -49,6 +48,7 @@ module.exports = class {
                 logger.debug(`Timetable: Working ${item[i].title}...`)
                 
             }
+            await this.TimetableModel.deleteOne({ day })
             await timetableModel.save()
         }    
     }
