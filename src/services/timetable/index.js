@@ -17,8 +17,5 @@ module.exports = async () => {
         throw new Error('The file that contains information of the timetable is invalid.')
     }
 
-    // Reset the timetable collection
-    await TimetableModel.deleteMany({})
-
     await timetable.insertTable(table)
 }

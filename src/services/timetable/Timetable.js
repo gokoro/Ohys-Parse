@@ -16,7 +16,8 @@ module.exports = class {
             const timetableModel = new this.TimetableModel()
     
             timetableModel.day = day
-    
+            timetableModel.animes = []
+
             const item = response[day]
     
             for (let i = 0; i < item.length; i++) {
