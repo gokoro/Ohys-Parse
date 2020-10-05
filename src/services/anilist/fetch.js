@@ -41,7 +41,13 @@ module.exports = async animeTitle => {
                 logger.debug('Retrieving successed!')
                 break
             }
+
+            if (titleForHandleException.length === 0) {
+                break
+            }         
         }
+
+        return nullForm(animeTitle)
     }
 
     // 'x-ratelimit-remaining' is zero, so Can't fetch anymore.
