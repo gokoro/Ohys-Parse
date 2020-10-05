@@ -32,6 +32,7 @@ module.exports = async animeTitle => {
             titleForHandleException.pop()
 
             const splitedTitle = [...titleForHandleException].join(' ')
+            console.log("splitedTitle", splitedTitle)
 
             logger.debug('Retrieving for anilist with title: ' + splitedTitle)
 
@@ -43,11 +44,10 @@ module.exports = async animeTitle => {
             }
 
             if (titleForHandleException.length === 0) {
-                break
+                return nullForm(animeTitle)
             }         
         }
 
-        return nullForm(animeTitle)
     }
 
     // 'x-ratelimit-remaining' is zero, so Can't fetch anymore.
