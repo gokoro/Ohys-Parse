@@ -18,23 +18,39 @@ module.exports = class {
             timetableModel.day = day
 
             const item = response[day]
-    
+            
             for (let i = 0; i < item.length; i++) {
-                const isSeriesExist = await this.anime.isSeriesExist(item[i].title)
+                const nameToRetrieve = item[i].as || item[i].title
 
-                if (!isSeriesExist) {
-                    await this.anime.insertSeries(
-                        await fetchAnilist(item[i].title)
-                    )
+                const isAsFieldExist = item[i].as !== undefined
+                const isSeriesExist = await this.anime.isSeriesExist(nameToRetrieve)
+
+                // If It's needed to fetch metadata
+                if (!isSeriesExist || isAsFieldExist) {
+                    const anilistMetadata = await fetchAnilist(item[i].title)
+
+                    const query = {
+                        ...anilistMetadata,
+                        name: nameToRetrieve
+                    }
+
+                    // If series doesn't exist
+                    if (!isSeriesExist) {
+                        await this.anime.insertSeries(query)
+
+                    // If `as` field in the timetable exists
+                    } else if (isAsFieldExist) {
+                        await this.updateTable(nameToRetrieve, query)
+                    }
                 }
 
-                const fetchedAnime = await this.AnimeModel.findOne({name: item[i].title}).select('_id') || {}
+                const fetchedAnime = await this.AnimeModel.findOne({name: nameToRetrieve}).select('_id')
 
                 timetableModel.animes.push(fetchedAnime._id || null)
                 
                 const [ time, broadcaster ] = item[i].time.split(' ')
 
-                await this.updateTable({
+                await this.updateTable(nameToRetrieve, {
                     title: {
                         romaji: item[i].title,
                         japanese: item[i].ja_title,
@@ -48,11 +64,11 @@ module.exports = class {
                 logger.debug(`Timetable: Working ${item[i].title}...`)
                 
             }
-            await this.TimetableModel.deleteOne({ day })
+            await this.TimetableModel.deleteMany({ day })
             await timetableModel.save()
         }    
     }
-    async updateTable(form) {
-        await this.AnimeModel.findOneAndUpdate({name: form.title.romaji}, form)
+    async updateTable(retrieveWith, form) {
+        await this.AnimeModel.findOneAndUpdate({name: retrieveWith}, form)
     }
 }

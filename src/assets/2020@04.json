@@ -31,6 +31,13 @@
             "time": "01:30 TX"
         },
         {
+            "title": "Maou-jou de Oyasumi",
+            "eng_title": "Sleepy Princess in the Demon Castle",
+            "kor_title": "마왕성에서 잘 자요",
+            "ja_title": "魔王城でおやすみ",
+            "time": "02:00 TX"
+        },
+        {
             "title": "Black Clover",
             "eng_title": "Black Clover",
             "kor_title": "블랙 클로버",
@@ -59,13 +66,6 @@
             "time": "21:50 AT-X"
         },
         {
-            "title": "Maou-jou de Oyasumi",
-            "eng_title": "Sleepy Princess in the Demon Castle",
-            "kor_title": "마왕성에서 잘 자요",
-            "ja_title": "魔王城でおやすみ",
-            "time": "22:00 AT-X"
-        },
-        {
             "title": "Magatsu Wahrheit Zuerst",
             "eng_title": "Magatsu Wahrheit: Zuerst",
             "kor_title": "불길한 바르하이트 -ZUERST-",
@@ -90,6 +90,7 @@
         },
         {
             "title": "Kimi to Boku no Saigo no Senjou, Arui wa Sekai ga Hajimaru Seisen",
+            "as": "kimisen",
             "eng_title": "Our Last Crusade or the Rise of a New World",
             "kor_title": "너와 나의 최후의 전장, 혹은 세계가 시작되는 성전",
             "ja_title": "キミと僕の最後の戦場、あるいは世界が始まる聖戦",
@@ -113,6 +114,7 @@
         },
         {
             "title": "Dai 501 Tougou Sentou Koukuu Dan Strike Witches Road to Berlin",
+            "as": "Strike Witches Road to Berlin",
             "eng_title": "Strike Witches: Road to Berlin",
             "kor_title": "제501통합전투항공단 스트라이크 위치스 ROAD to BERLIN",
             "ja_title": "ストライクウィッチーズ ROAD to BERLIN",
@@ -133,13 +135,6 @@
             "time": "21:54 BS11/MX"
         },
         {
-            "title": "King`s Raid Ishi o Tsugu Mono-tachi",
-            "eng_title": "King's Raid: Successors of the Will",
-            "kor_title": "킹스레이드: 의지를 잇는 자들",
-            "ja_title": "キングスレイド 意志を継ぐものたち",
-            "time": "23:00 AT-X"
-        },
-        {
             "title": "Higurashi no Naku Koro ni (2020)",
             "eng_title": "Higurashi: When They Cry - New",
             "kor_title": "쓰르라미 울 적에",
@@ -148,13 +143,6 @@
         }
     ],
     "fri": [
-        {
-            "title": "Mewkledreamy",
-            "eng_title": "Mewkledreamy",
-            "kor_title": "뮤클드리미",
-            "ja_title": "ミュークルドリーミー",
-            "time": "00:00 AT-X"
-        },
         {
             "title": "Assault Lily Bouquet",
             "eng_title": "Assault Lily: Bouquet",
@@ -176,12 +164,13 @@
             "ja_title": "魔女の旅々",
             "time": "21:00 AT-X"
         },
-        {
-            "title": "Dragon Quest Dai no Daibouken (2020)",
-            "eng_title": "Dragon Quest: Dai's Great Adventure",
-            "kor_title": "드래곤 퀘스트: 다이의 대모험",
-            "ja_title": "ドラゴンクエスト ダイの大冒険",
-            "time": "22:30 AT-X"
+        {	
+            "title": "100-man no Inochi no Ue ni Ore wa Tatte Iru",	
+            "as": "KV",
+            "eng_title": "I'm standing on 1,000,000 lives",	
+            "kor_title": "나는 100만 명의 목숨 위에 서 있다",	
+            "ja_title": "100万の命の上に俺は立っている",	
+            "time": "22:00 MX"	
         },
         {
             "title": "D4DJ First Mix",
@@ -214,6 +203,13 @@
             "time": "01:05 MX"
         },
         {
+            "title": "King`s Raid Ishi o Tsugu Mono-tachi",
+            "eng_title": "King's Raid: Successors of the Will",
+            "kor_title": "킹스레이드: 의지를 잇는 자들",
+            "ja_title": "キングスレイド 意志を継ぐものたち",
+            "time": "01:23 TX"
+        },
+        {
             "title": "Jujutsu Kaisen",
             "eng_title": "Sorcery Fight",
             "kor_title": "주술회전",
@@ -228,11 +224,26 @@
             "time": "01:55 TBS/MBS"
         },
         {
+            "title": "Iwa Kakeru! Sport Climbing Girls",
+            "eng_title": "Hang On! Climbing Girls",
+            "kor_title": "이와카케루! -Sport Climbing Girl-",
+            "ja_title": "いわかける！- Sport Climbing Girls -",
+            "time": "02:00 EX"
+        },
+        {
             "title": "Haikyuu!! To the Top (2020)",
             "eng_title": "Haikyuu!! (2020) 2nd Season",
             "kor_title": "하이큐!! TO THE TOP",
             "ja_title": "ハイキュー!! TO THE TOP 第2クール",
             "time": "02:25 TBS/MBS"
+        },
+        {
+            "title": "Dragon Quest Dai no Daibouken (2020)",
+            "as": "Dqdai",
+            "eng_title": "Dragon Quest: Dai's Great Adventure",
+            "kor_title": "드래곤 퀘스트: 다이의 대모험",
+            "ja_title": "ドラゴンクエスト ダイの大冒険",
+            "time": "09:30 TX"
         },
         {
             "title": "Han`you no Yashahime Sengoku Otogizoushi",
@@ -321,18 +332,18 @@
             "time": "10:00 TX"
         },
         {
+            "title": "Mewkledreamy",
+            "eng_title": "Mewkledreamy",
+            "kor_title": "뮤클드리미",
+            "ja_title": "ミュークルドリーミー",
+            "time": "10:30 TX"
+        },
+        {
             "title": "Munou na Nana",
             "eng_title": "Talentless Nana",
             "kor_title": "무능한 나나",
             "ja_title": "無能なナナ",
             "time": "21:30 AT-X"
-        },
-        {
-            "title": "Iwa Kakeru! Sport Climbing Girls",
-            "eng_title": "Hang On! Climbing Girls",
-            "kor_title": "이와카케루! -Sport Climbing Girl-",
-            "ja_title": "いわかける！- Sport Climbing Girls -",
-            "time": "22:00 AT-X"
         },
         {
             "title": "Yuukoku no Moriarty",

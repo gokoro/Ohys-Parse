@@ -32,7 +32,6 @@ module.exports = async animeTitle => {
             titleForHandleException.pop()
 
             const splitedTitle = [...titleForHandleException].join(' ')
-            console.log("splitedTitle", splitedTitle)
 
             logger.debug('Retrieving for anilist with title: ' + splitedTitle)
 
