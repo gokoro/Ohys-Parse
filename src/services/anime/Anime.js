@@ -54,5 +54,10 @@ class Anime {
 
         await Model.findOneAndUpdate({name: form.name}, form)
     }
+    async selectNameToRetrieve(fileName) {
+        const asField = await this.Model.findOne({ name: fileName }).select(['title'])
+
+        return asField.romaji || fileName
+    }
 }
 module.exports = Anime

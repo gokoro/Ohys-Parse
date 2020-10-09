@@ -56,6 +56,7 @@ module.exports = class {
                         japanese: item[i].ja_title,
                         english: item[i].eng_title,
                         korean: item[i].kor_title,
+                        as: item[i].as || null
                     },
                     released_time: time,
                     release_broadcaster: broadcaster

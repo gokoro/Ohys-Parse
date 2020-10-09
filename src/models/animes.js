@@ -18,7 +18,8 @@ const animeSchema = new mongoose.Schema({
         romaji: { type: String, default: null },
         japanese: { type: String, default: null },
         english: { type: String, default: null },
-        korean: { type: String, default: null }
+        korean: { type: String, default: null },
+        as: { type: String, default: null },
     },
     imageUrl: String,
     smallImageUrl: String,
