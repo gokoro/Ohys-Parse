@@ -3,6 +3,8 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 module.exports = {
+    env: process.env.NODE_ENV || 'production',
+
     databaseURL: process.env.DATABASE_URL || '',
     databaseName: process.env.DATABASE_NAME || '',
 
@@ -13,4 +15,9 @@ module.exports = {
     fakeServer: process.env.FAKE_SERVER || 'false',
     port: process.env.PORT || 5000,
     appURL: process.env.APP_URL || '',
+
+    currentYear: process.env.CURRENT_YEAR || '',
+    currentSeason: process.env.CURRENT_SEASON || '',
+
+    tmdbApiKey: process.env.TMDB_API_KEY || ''
 }
