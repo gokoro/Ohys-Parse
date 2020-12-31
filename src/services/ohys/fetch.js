@@ -1,4 +1,4 @@
-const axios = require('axios')
+const axios = require('axios').default
 const crypto = require('crypto')
 
 // Regex by Seia-soto's ohys-api (https://github.com/Seia-Soto/ohys-api/blob/master/ohys/serializeTitle.js)
@@ -9,11 +9,11 @@ const fetch = async page => {
     const url = 'https://eu.ohys.net/t/json.php?dir=disk&q&p=' + page
     const list = []
 
-    const response = await axios(url)
+    const response = await axios.get(url)
     let parsedData = null
 
     try {
-        parsedData = JSON.parse(response.data.slice(1))
+        parsedData = response.data
     } catch (err) {
         return null
     }

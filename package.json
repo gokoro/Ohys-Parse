@@ -5,13 +5,14 @@
   "author": "Gokoro <lincroe@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "cross-env LOG_LEVEL=info node src/app.js",
-    "debug": "cross-env LOG_LEVEL=debug node src/app.js",
-    "debug-hard": "cross-env LOG_LEVEL=silly node src/app.js",
-    "slient": "cross-env LOG_LEVEL=error node src/app.js"
+    "start": "cross-env NODE_ENV=production node src/app.js",
+    "start:dev": "cross-env NODE_ENV=development nodemon src/app.js",
+    "parsing": "yarn parsing:anime && yarn parsing:schedule",
+    "parsing:anime": "node scripts/parsing-anime.js",
+    "parsing:schedule": "node scripts/parsing-schedule.js"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "mongoose": "^5.9.28",
