@@ -9,22 +9,22 @@ const api = axios.create({
     }
 })
 
-const getSearch = async (title) => {
+const getSearch = async (title, splitSize = ' ') => {
     let animeID = null
     let originalTitle = ''
 
-    const splitedTitles = title.split(' ')
+    const splittedTitles = title.split(splitSize)
 
-    for (let i = 0, l = splitedTitles.length; i < l; i++) {
+    for (let i = 0, l = splittedTitles.length; i < l; i++) {
         const res = await api.get('/search/tv', {
             params: {
-                query: splitedTitles.join(' ')
+                query: splittedTitles.join(splitSize)
             }
         })
         const { total_results, results } = res.data
 
         if (total_results < 1) {
-            splitedTitles.pop()
+            splittedTitles.pop()
             continue
         }
 
@@ -35,6 +35,14 @@ const getSearch = async (title) => {
         originalTitle = results[0].original_name
 
         break
+    }
+
+    if (splittedTitles.length < 1 && splitSize === ' ') {
+        return await getSearch(title, '')
+    }
+
+    if (splittedTitles.length < 1 && splitSize === '') {
+        return
     }
 
     return { animeID, originalTitle }
@@ -54,9 +62,17 @@ const getTranslated = async (id, alt = {}) => {
         .filter(item => ['US', 'JP', 'KR'].includes(item.iso_3166_1))
         .map(item => ({
             language: item.english_name,
-            iso_language: `${item.iso_639_1}-${item.iso_3166_1}`,
             title: item.data.name || alt[item.english_name]
         }))
+
+    Object.keys(alt).forEach(altLanguage => {
+        if (!titles.some(item => item.language === altLanguage)) {
+            titles.push({
+                language: altLanguage,
+                title: alt[altLanguage]
+            })
+        }
+    })
 
     return titles
 }
