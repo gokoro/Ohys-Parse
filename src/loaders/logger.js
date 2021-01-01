@@ -2,7 +2,7 @@ const winston = require('winston')
 const config = require('../config')
 
 const logger = winston.createLogger({
-    level: config.logLevel,
+    level: config.env === 'development' ? 'debug': 'info',
     
     format: winston.format.combine(
         winston.format.errors({ stack: true }),

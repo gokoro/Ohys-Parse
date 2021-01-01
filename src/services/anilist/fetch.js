@@ -134,15 +134,14 @@ async function fetch(animeTitle) {
     const variables = {
         animeTitle
     }
-    return await axios.post(url, null, {
+    return await axios.post(url, {
+        query,
+        variables
+    }, {
         validateStatus: () => true,
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-        },
-        data: {
-            query,
-            variables
         }
     })
 }

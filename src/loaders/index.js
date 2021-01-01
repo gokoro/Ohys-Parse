@@ -14,10 +14,13 @@ const loaders = async () => {
         logger.info('Fake server for Heroku is running...')
         server()
     }
-    await services.anime.start()
 
-    logger.info('Starting crawling ohys timetables...')
-    await services.timetable()
-}
+    if (config.env === 'production') {
+        await services.anime.start()
+    
+        logger.info('Starting crawling ohys timetables...')
+        await services.timetable()
+    }
+ }
 
 module.exports = loaders

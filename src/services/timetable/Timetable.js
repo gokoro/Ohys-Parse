@@ -48,18 +48,16 @@ module.exports = class {
 
                 timetableModel.animes.push(fetchedAnime._id || null)
                 
-                const [ time, broadcaster ] = item[i].time.split(' ')
-
                 await this.updateTable(nameToRetrieve, {
                     title: {
                         romaji: item[i].title,
-                        japanese: item[i].ja_title,
-                        english: item[i].eng_title,
-                        korean: item[i].kor_title,
+                        japanese: item[i].japanese_title,
+                        english: item[i].english_title,
+                        korean: item[i].korean_title,
                         as: item[i].as || null
                     },
-                    released_time: time,
-                    release_broadcaster: broadcaster
+                    released_time: item[i].time,
+                    release_broadcaster: item[i].broadcaster
                 })
 
                 logger.debug(`Timetable: Working ${item[i].title}...`)

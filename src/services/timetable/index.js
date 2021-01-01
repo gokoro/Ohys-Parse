@@ -1,6 +1,8 @@
-const config = require('../../config')
+const collectSchedule = require('./collectSchedule')
+const fetchTMDB = require('../tmdb/fetch')
+const logger = require('../../loaders/logger')
 
-const table = require(`../../assets/${config.season}.json`)
+const { currentYear, currentSeason } = require('../../config')
 
 // Model
 const AnimeModel = require('../../models/animes')
@@ -13,9 +15,27 @@ const Anime = require('../anime/Anime')
 module.exports = async () => {
     const timetable = new Timetable(AnimeModel, TimetableModel, Anime)
 
-    if (typeof timetable !== 'object') {
-        throw new Error('The file that contains information of the timetable is invalid.')
+    if (!currentYear || !currentSeason) {
+        throw new Error('There is no specific year or season in the environment file. Please check.')
     }
 
-    await timetable.insertTable(table)
+    logger.info('Getting schedule from Github...')
+    const parsedSchedules = await collectSchedule()
+    
+    logger.info('Getting titles of anime to create schedule...')
+     
+    for (const day in parsedSchedules) {
+        for (const anime of parsedSchedules[day]) {
+            try {
+                logger.debug(`Retrieving: ${anime.title}`)
+                const { titles } = await fetchTMDB(anime.title)
+                
+                for (const title of titles) {
+                    anime[`${title.language.toLowerCase()}_title`] = title.title
+                }
+            } catch (err) { continue }
+        }
+    }
+    
+    await timetable.insertTable(parsedSchedules)
 }
