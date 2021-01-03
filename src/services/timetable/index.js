@@ -1,3 +1,6 @@
+const axios = require('axios').default
+const crypto = require('crypto')
+
 const collectSchedule = require('./collectSchedule')
 const fetchTMDB = require('../tmdb/fetch')
 const logger = require('../../loaders/logger')
@@ -12,14 +15,39 @@ const TimetableModel = require('../../models/timetable')
 const Timetable = require('./Timetable')
 const Anime = require('../anime/Anime')
 
-module.exports = async () => {
+global.ohysTimetableHash = ''
+
+const checkNewSchedule = async () => {
+    const BASE_URL = `https://raw.githubusercontent.com/ohyongslck/annie/master/${currentYear}@${currentSeason}`
+    const { data } = await axios.get(BASE_URL)
+
+    const hash = crypto.createHash('md5').update(data).digest('hex')
+
+    if (global.ohysTimetableHash === hash) {
+        return false
+    }
+
+    global.ohysTimetableHash = hash
+    
+    return true
+}
+
+const applyTable = async () => {
     const timetable = new Timetable(AnimeModel, TimetableModel, Anime)
 
     if (!currentYear || !currentSeason) {
         throw new Error('There is no specific year or season in the environment file. Please check.')
     }
 
-    logger.info('Getting schedule from Github...')
+    logger.info('Checking if there is a new timetable in Github repository...')
+    const isNewSchedule = await checkNewSchedule()
+
+    if (!isNewSchedule) {
+        logger.info('The existing schedule has already been crawled.')
+        return
+    }
+
+    logger.info('New Schedule available! Getting schedule from Github...')
     const parsedSchedules = await collectSchedule()
     
     logger.info('Getting titles of anime to create schedule...')
@@ -38,4 +66,10 @@ module.exports = async () => {
     }
     
     await timetable.insertTable(parsedSchedules)
+}
+
+module.exports = async () => {
+    await applyTable()
+
+    setInterval(applyTable, 1000 * 60 * 60 * 24) // Everyday
 }
