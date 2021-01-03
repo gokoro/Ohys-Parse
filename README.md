@@ -11,19 +11,10 @@
 
 To get started, You first need to install docker on the environment in which you will run this project.
 
-Run the following command in your terminal:
+Run the following command in your terminal. If you have already installed Docker, Skip this process.
 
 ```bash
 curl -s https://get.docker.com | sudo sh
-```
-
-### Clone the project
-
-Clone this repository to get all files needed to run, and move to the main folder.
-
-```bash
-git clone https://github.com/gokoro/Ohys-Parse.git
-cd Ohys-Parse
 ```
 
 ### Run
@@ -32,10 +23,10 @@ cd Ohys-Parse
 
 You can run this project on docker. If you choose this method, You won't have to install Node.js and other packages on your environment.
 
-1. Run the following commands to build the image.
+1. Pull the docker image of this project.
 
 ```bash
-docker build -t ohys-parse .
+docker pull ghcr.io/gokoro/ohys-parse:latest
 ```
 
 2. Run the container by running the following command. You will need to replace the environment variables with what you actually use.
@@ -48,27 +39,34 @@ docker run \
 	-e TMDB_API_KEY=YOUR_TMDB_API_KEY \
 	-e CURRENT_YEAR=2021 \
 	-e CURRENT_SEASON=1 \
-	-d ohys-parse
+	-d ghcr.io/gokoro/ohys-parse
 ```
 
 **Run on your machine**
 
 If you have already configured your server, You can run this project without Docker.
 
-1. Install dependencies by yarn.
+1. Clone this repository to get all files needed to run, and move to the main folder.
+
+```bash
+git clone https://github.com/gokoro/Ohys-Parse.git
+cd Ohys-Parse
+```
+
+2. Install dependencies by yarn.
 
 ```bash
 yarn install --production
 ```
 
-2. Save `.env.example` file as `.env` and fill it.
+3. Save `.env.example` file as `.env` and fill it.
 
 ```bash
 mv .env.example .env
 nano .env
 ```
 
-3. Run the program by running the following command.
+4. Run the program by running the following command.
 
 ```bash
 yarn start
