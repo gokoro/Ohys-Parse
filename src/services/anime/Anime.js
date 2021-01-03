@@ -17,10 +17,7 @@ class Anime {
 
         const count = await Model.countDocuments({name: name})
 
-        if (count) {
-            return true
-        }
-        return false
+        return !!count
     }
 
     async insertItem(form) {

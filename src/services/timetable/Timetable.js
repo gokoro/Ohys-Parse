@@ -20,14 +20,14 @@ module.exports = class {
             const item = response[day]
             
             for (let i = 0; i < item.length; i++) {
-                const nameToRetrieve = item[i].as || item[i].title
+                const nameToRetrieve = item[i].title
 
-                const isAsFieldExist = item[i].as !== undefined
-                const isSeriesExist = await this.anime.isSeriesExist(nameToRetrieve)
+                const seriesData = await this.AnimeModel.findOne({ name: nameToRetrieve })
+                const seriesAsField = seriesData && seriesData.title && seriesData.title.as
 
                 // If It's needed to fetch metadata
-                if (!isSeriesExist || isAsFieldExist) {
-                    const anilistMetadata = await fetchAnilist(item[i].title)
+                if (!seriesData || seriesAsField) {
+                    const anilistMetadata = await fetchAnilist(seriesAsField || nameToRetrieve)
 
                     const query = {
                         ...anilistMetadata,
@@ -35,11 +35,10 @@ module.exports = class {
                     }
 
                     // If series doesn't exist
-                    if (!isSeriesExist) {
+                    if (!seriesData) {
                         await this.anime.insertSeries(query)
-
-                    // If `as` field in the timetable exists
-                    } else if (isAsFieldExist) {
+                        continue
+                    } else {
                         await this.updateTable(nameToRetrieve, query)
                     }
                 }
@@ -54,7 +53,7 @@ module.exports = class {
                         japanese: item[i].japanese_title,
                         english: item[i].english_title,
                         korean: item[i].korean_title,
-                        as: item[i].as || null
+                        as: seriesAsField || ''
                     },
                     released_time: item[i].time,
                     release_broadcaster: item[i].broadcaster
