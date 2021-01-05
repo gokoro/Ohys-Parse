@@ -1,5 +1,12 @@
 const mongoose = require('mongoose')
 
+const { customAlphabet } = require('nanoid')
+const alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+
+const nanoid = customAlphabet(alphabet, 10)
+
+const getRandomID = () => nanoid()
+
 const itemsSchema = new mongoose.Schema({
     episode: Number,
     link: String,
@@ -13,6 +20,11 @@ const itemsSchema = new mongoose.Schema({
 })
 
 const animeSchema = new mongoose.Schema({
+    _id: {
+        type: String,
+        unique: true,
+        default: () => getRandomID()
+    },
     name: String,
     title: {
         romaji: { type: String, default: null },

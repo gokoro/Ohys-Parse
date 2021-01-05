@@ -5,6 +5,7 @@ const timetableSchema = new mongoose.Schema({
         type: String,
         unique: true
     },
-    animes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Anime' }]
+    animes: [String]
 })
+
 module.exports = mongoose.model('Timetable', timetableSchema)
