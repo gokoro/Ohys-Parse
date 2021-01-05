@@ -9,6 +9,7 @@ const days = [
     '월', '화', '수', '목', '금', '토', '일', 'SP',
     '月', '火', '水', '木', '金', '土', '日', 'SP',
     'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN', 'SP',
+    'UNK'
 ]
 const dividers = [
     '/', '[', ']'
@@ -56,8 +57,6 @@ const parseSchedule = async (opts = {}) => {
         const line = lines[i]
 
         if (!line) continue
-
-        if (line.includes("------")) break // If the loop meets divider
 
         // NOTE: if current line is representing day;
         for (let k = 0, s = days.length; k < s; k++) {
