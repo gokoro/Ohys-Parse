@@ -58,6 +58,8 @@ const parseSchedule = async (opts = {}) => {
 
         if (!line) continue
 
+        if (line.includes("------")) break // If the loop meets divider
+        
         // NOTE: if current line is representing day;
         for (let k = 0, s = days.length; k < s; k++) {
             if (line.toUpperCase().startsWith(days[k])) {
@@ -186,9 +188,10 @@ module.exports = async () => {
         const dayOfItem = shortenDays[dayByNumber]
 
         const addZero = (num) => num < 10 ? `0${num}` : num.toString()
+        const leachFileName = str => str.replace(/[\\/:\*\?"<>\|]/g)
 
         const itemToPut = {
-            title: name,
+            title: leachFileName(name),
             time: `${addZero(hour)}:${addZero(minute)}`,
             broadcaster
         }
