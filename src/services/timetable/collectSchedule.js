@@ -96,19 +96,22 @@ const parseSchedule = async (opts = {}) => {
                 
                 const timeRegex = /\d{1,2}:\d{1,2}/i
                 const dateRegex = /\d{1,2}\/\d{1,2}/
-
+                const yearRegex = /\d{3}/
+                
                 if (!time) {
                     const possible = token.match(timeRegex) || []
 
                     time = possible[0]
                 } else if (!date) {
-                    const possible = token.match(dateRegex) || []
+                    const possible = token.match(dateRegex) || token.match(yearRegex) || []
 
                     date = possible[0]
-                } else if (!broadcaster && token.match(timeRegex) && token.match(dateRegex)) {
-                    const [, , possible ] = token.split(' ')
 
-                    broadcaster = possible
+                    if (!broadcaster && token.match(timeRegex) && (token.match(dateRegex) || token.match(yearRegex))) {
+                        const [, , possible ] = token.split(' ')
+    
+                        broadcaster = possible
+                    }
                 } else if (
                     token &&
                     token.match(
