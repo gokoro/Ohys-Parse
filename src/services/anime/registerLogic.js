@@ -35,12 +35,16 @@ const registerLogic = async fetched => {
         )
 
         const nameToRetrieve = await anime.selectNameToRetrieve(fetched.name)
+        console.log("~ nameToRetrieve", nameToRetrieve)
         const anilistResponse = await fetchAnilist(nameToRetrieve) 
+        console.log("~ anilistResponse", anilistResponse)
         delete anilistResponse.title
 
-        await anime.updateSeriesInfo(
-            anilistResponse
-        )
+        await anime.updateSeriesInfo({
+            ...anilistResponse,
+            name: fetched.name
+        })
+        
         return
     }
 }
