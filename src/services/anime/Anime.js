@@ -54,7 +54,7 @@ class Anime {
     async selectNameToRetrieve(fileName) {
         const titleField = await this.Model.findOne({ name: fileName }).select(['title'])
 
-        return titleField.title.romaji || fileName
+        return titleField.title.as || fileName
     }
 }
 module.exports = Anime
