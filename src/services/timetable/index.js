@@ -71,5 +71,5 @@ const applyTable = async () => {
 module.exports = async () => {
     await applyTable()
 
-    setInterval(applyTable, 1000 * 60 * 60 * 24) // Everyday
+    setInterval(applyTable, 1000 * 60 * 60 ) // Every hour
 }
