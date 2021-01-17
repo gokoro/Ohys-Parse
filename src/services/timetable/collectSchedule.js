@@ -96,7 +96,7 @@ const parseSchedule = async (opts = {}) => {
                 
                 const timeRegex = /\d{1,2}:\d{1,2}/i
                 const dateRegex = /\d{1,2}\/\d{1,2}/
-                const yearRegex = /\d{3}/
+                const yearRegex = /\d{3}\s/
                 
                 if (!time) {
                     const possible = token.match(timeRegex) || []
