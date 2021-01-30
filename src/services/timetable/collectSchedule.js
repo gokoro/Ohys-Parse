@@ -209,7 +209,7 @@ module.exports = async () => {
     const dayOfItem = shortenDays[dayByNumber]
 
     const addZero = (num) => (num < 10 ? `0${num}` : num.toString())
-    const leachFileName = (str) => str.replace(/[\\/:\*\?"<>\|]/g)
+    const leachFileName = (str) => str.replace(/[\\/:\*\?"<>\|]/g, '')
 
     const itemToPut = {
       title: leachFileName(name),
