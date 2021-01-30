@@ -6,21 +6,21 @@ const config = require('../config')
 const logger = require('./logger')
 
 const loaders = async () => {
-    await mongooseLoader()
-    logger.info('mongoDB has been loaded!! Starting main services...')
-    
-    // For Heroku. Not to sleep 
-    if (config.fakeServer === 'true') {
-        logger.info('Fake server for Heroku is running...')
-        server()
-    }
+  await mongooseLoader()
+  logger.info('mongoDB has been loaded!! Starting main services...')
 
-    if (config.env === 'production') {
-        await services.anime.start()
-    
-        logger.info('Starting crawling ohys timetables...')
-        await services.timetable()
-    }
- }
+  // For Heroku. Not to sleep
+  if (config.fakeServer === 'true') {
+    logger.info('Fake server for Heroku is running...')
+    server()
+  }
+
+  if (config.env === 'production') {
+    await services.anime.start()
+
+    logger.info('Starting crawling ohys timetables...')
+    await services.timetable()
+  }
+}
 
 module.exports = loaders

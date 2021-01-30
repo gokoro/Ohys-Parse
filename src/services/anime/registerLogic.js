@@ -8,42 +8,36 @@ const logger = require('../../loaders/logger')
 
 const fetchAnilist = require('../anilist/fetch')
 
-const registerLogic = async fetched => {
-    const anime = new Anime(AnimeModel)
-    const isSeriesExist = await anime.isSeriesExist(fetched.name)
-    
-    if (!isSeriesExist) {
-        logger.info('The new series exists: ' + fetched.name)
+const registerLogic = async (fetched) => {
+  const anime = new Anime(AnimeModel)
+  const isSeriesExist = await anime.isSeriesExist(fetched.name)
 
-        await anime.insertSeries(
-            await fetchAnilist(fetched.name)
-        )
+  if (!isSeriesExist) {
+    logger.info('The new series exists: ' + fetched.name)
 
-        await anime.insertItem(
-            fetched
-        )
-        return
-    }
-    
-    const isItemExist = await anime.isItemExist(fetched)
+    await anime.insertSeries(await fetchAnilist(fetched.name))
 
-    if (!isItemExist) {
-        logger.info('The new item exists: ' + fetched.name)
+    await anime.insertItem(fetched)
+    return
+  }
 
-        await anime.insertItem(
-            fetched
-        )
+  const isItemExist = await anime.isItemExist(fetched)
 
-        const nameToRetrieve = await anime.selectNameToRetrieve(fetched.name)
-        const anilistResponse = await fetchAnilist(nameToRetrieve) 
-        delete anilistResponse.title
+  if (!isItemExist) {
+    logger.info('The new item exists: ' + fetched.name)
 
-        await anime.updateSeriesInfo({
-            ...anilistResponse,
-            name: fetched.name
-        })
-        
-        return
-    }
+    await anime.insertItem(fetched)
+
+    const nameToRetrieve = await anime.selectNameToRetrieve(fetched.name)
+    const anilistResponse = await fetchAnilist(nameToRetrieve)
+    delete anilistResponse.title
+
+    await anime.updateSeriesInfo({
+      ...anilistResponse,
+      name: fetched.name,
+    })
+
+    return
+  }
 }
 module.exports = registerLogic
