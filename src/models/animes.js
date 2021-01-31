@@ -35,7 +35,6 @@ const animeSchema = new mongoose.Schema({
     as: { type: String, default: null },
   },
   imageUrl: String,
-  smallImageUrl: String,
   bannerImage: String,
   color: String,
   season: String,

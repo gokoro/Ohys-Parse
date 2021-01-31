@@ -66,40 +66,24 @@ module.exports = async (animeTitle) => {
   logger.silly('Anilist response: ' + JSON.stringify(response.data))
 
   const {
-    data: {
-      Media: {
-        id,
-        title,
-        season,
-        seasonYear,
-        description,
-        coverImage: {
-          extraLarge: imageUrl,
-          large: smallImageUrl,
-          color: color,
-        },
-        bannerImage,
-        streamingEpisodes: epsodeInfo,
-      },
-    },
+    data: { Media },
   } = response.data
 
   return {
-    id,
+    id: Media.id,
     name: animeTitle,
     title: {
-      romaji: title.romaji,
-      japanese: title.native,
-      english: title.english,
+      romaji: Media.title.romaji,
+      japanese: Media.title.native,
+      english: Media.title.english,
     },
-    description: (description || '').replace(/<[^>]*>/g, ''),
-    imageUrl,
-    smallImageUrl,
-    bannerImage,
-    color,
-    season,
-    released_year: seasonYear,
-    episode_info: epsodeInfo,
+    description: (Media.description || '').replace(/<[^>]*>/g, ''),
+    imageUrl: getFileFromUrl(Media.coverImage.medium),
+    bannerImage: getFileFromUrl(Media.bannerImage || ''),
+    color: Media.coverImage.color,
+    season: Media.season,
+    released_year: Media.seasonYear,
+    episode_info: Media.streamingEpisodes,
   }
 }
 
@@ -119,8 +103,7 @@ async function fetch(animeTitle) {
                 season
                 seasonYear
                 coverImage {
-                    extraLarge
-                    large
+                    medium
                     color
                 }
                 bannerImage
@@ -162,7 +145,6 @@ function nullForm(name) {
       english: null,
     },
     imageUrl: null,
-    smallImageUrl: null,
     bannerImage: null,
     color: null,
     season: null,
@@ -173,4 +155,10 @@ function nullForm(name) {
       thumbnail: null,
     },
   }
+}
+
+const getFileFromUrl = (url) => {
+  const splited = url.split('/')
+
+  return splited[splited.length - 1]
 }
