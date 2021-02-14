@@ -6,7 +6,7 @@ const crypto = require('crypto')
 const regex = /(?:\[([^\r\n\]]*)\][\W]?)?(?:(?:([^\r\n]+?)(?: - ([\d.]+?)(?: END)?)?)[\W]?[(|[]([^\r\n(]+)? (\d+x\d+|\d+&\d+)? ([^\r\n]+)?[)\]][^.\r\n]*(?:\.([^\r\n.]*)(?:\.[\w]+)?)?)$/
 
 const fetch = async (page) => {
-  const url = 'https://eu.ohys.net/t/json.php?dir=disk&q&p=' + page
+  const url = 'https://eu.ohys.nl/t/json.php?dir=disk&q&p=' + page
   const list = []
 
   const response = await axios.get(url)
@@ -31,7 +31,7 @@ const fetch = async (page) => {
     titleNewer.audioFormat = parsedTitle[6]
     titleNewer.videoFormat = parsedTitle[7]
 
-    titleNewer.link = 'https://eu.ohys.net/t/' + parsedData[i]['a']
+    titleNewer.link = 'https://eu.ohys.nl/t/' + parsedData[i]['a']
     titleNewer.hash = createHash(JSON.stringify(parsedData[i]))
     titleNewer.original = title
 
