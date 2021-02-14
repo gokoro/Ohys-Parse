@@ -78,8 +78,9 @@ module.exports = async (animeTitle) => {
       english: Media.title.english,
     },
     description: (Media.description || '').replace(/<[^>]*>/g, ''),
-    imageUrl: getFileFromUrl(Media.coverImage.medium),
-    bannerImage: getFileFromUrl(Media.bannerImage || ''),
+    imageUrl: Media.coverImage.extraLarge,
+    smallImageUrl: Media.coverImage.large,
+    bannerImage: Media.bannerImage,
     color: Media.coverImage.color,
     season: Media.season,
     released_year: Media.seasonYear,
@@ -103,7 +104,8 @@ async function fetch(animeTitle) {
                 season
                 seasonYear
                 coverImage {
-                    medium
+                    extraLarge
+                    large
                     color
                 }
                 bannerImage
@@ -145,6 +147,7 @@ function nullForm(name) {
       english: null,
     },
     imageUrl: null,
+    smallImageUrl: null,
     bannerImage: null,
     color: null,
     season: null,
@@ -155,10 +158,4 @@ function nullForm(name) {
       thumbnail: null,
     },
   }
-}
-
-const getFileFromUrl = (url) => {
-  const splited = url.split('/')
-
-  return splited[splited.length - 1]
 }
