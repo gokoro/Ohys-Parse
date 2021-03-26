@@ -5,7 +5,7 @@ const collectSchedule = require('./collectSchedule')
 const fetchTMDB = require('../tmdb/fetch')
 const logger = require('../../loaders/logger')
 
-const { currentYear, currentSeason } = require('../../config')
+const { currentYear, currentSeason, ohysGithubUrl } = require('../../config')
 
 // Model
 const AnimeModel = require('../../models/animes')
@@ -18,7 +18,10 @@ const Anime = require('../anime/Anime')
 global.ohysTimetableHash = ''
 
 const checkNewSchedule = async () => {
-  const BASE_URL = `https://raw.githubusercontent.com/ohyongslck/annie/master/${currentYear}@${currentSeason}`
+  const BASE_URL =
+    ohysGithubUrl ||
+    `https://raw.githubusercontent.com/ohyongslck/annie/master/${currentYear}@${currentSeason}`
+
   const { data } = await axios.get(BASE_URL)
 
   const hash = crypto.createHash('md5').update(data).digest('hex')

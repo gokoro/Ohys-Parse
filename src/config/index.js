@@ -16,6 +16,8 @@ module.exports = {
   port: process.env.PORT || 5000,
   appURL: process.env.APP_URL || '',
 
+  ohysGithubUrl: process.env.OHYS_GITHUB_URL || '',
+
   currentYear: process.env.CURRENT_YEAR || '',
   currentSeason: process.env.CURRENT_SEASON || '',
 
