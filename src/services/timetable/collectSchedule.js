@@ -3,7 +3,7 @@
 
 const axios = require('axios').default
 
-const { currentYear, currentSeason } = require('../../config')
+const { currentYear, currentSeason, ohysGithubUrl } = require('../../config')
 
 const days = [
   '월',
@@ -57,6 +57,7 @@ const parseSchedule = async (opts = {}) => {
   // NOTE: build url;
   const url =
     opts.url ||
+    ohysGithubUrl ||
     `https://raw.githubusercontent.com/${opts.repo}/${opts.branch}/${opts.year}@${opts.quarter}`
 
   // NOTE: request;
