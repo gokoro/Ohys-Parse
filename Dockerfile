@@ -1,7 +1,6 @@
 FROM node:12-alpine
 
-RUN mkdir app
-WORKDIR /app
+WORKDIR /usr/src/app
 COPY . .
 
 RUN yarn install --production
