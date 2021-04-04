@@ -6,6 +6,14 @@ const axios = require('axios').default
 const { currentYear, currentSeason, ohysGithubUrl } = require('../../config')
 
 const days = [
+  '月',
+  '火',
+  '水',
+  '木',
+  '金',
+  '土',
+  '日',
+  'SP',
   '월',
   '화',
   '수',
@@ -13,14 +21,6 @@ const days = [
   '금',
   '토',
   '일',
-  'SP',
-  '月',
-  '火',
-  '水',
-  '木',
-  '金',
-  '土',
-  '日',
   'SP',
   'MON',
   'TUE',
@@ -35,6 +35,13 @@ const days = [
 const dividers = ['/', '[', ']']
 const aggravateDividers = ['[', ']']
 const comments = ['//', '/{', '/ [', ' / ']
+
+const replaceDividers = (text) => {
+  text = text.replace(/【\s|「\s|『\s/gi, '[')
+  text = text.replace(/\s\】|\s\」|\s\』/gi, ']')
+
+  return text
+}
 
 const removeUselessDividers = (text) => {
   for (let i = 0, l = aggravateDividers.length; i < l; i++) {
@@ -62,7 +69,7 @@ const parseSchedule = async (opts = {}) => {
 
   // NOTE: request;
   const res = await axios.get(url)
-  const text = res.data
+  const text = replaceDividers(res.data)
   const lines = text.split('\n')
 
   // NOTE: parse data;
