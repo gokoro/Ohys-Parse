@@ -51,13 +51,13 @@ module.exports = async (animeTitle) => {
   if (!Number(response.headers['x-ratelimit-remaining'])) {
     // Sleep due to request limits of the APIs
 
-    const toWaitTime = Number(response.headers['retry-after'] + 1) * 1000
+    const toWaitTime = Number(response.headers['x-ratelimit-limit']) + 1
 
     logger.debug(
       `Requesting Anilist is limited now. Please waiting for ${toWaitTime} seconds...`
     )
 
-    await new Promise((r) => setTimeout(r, toWaitTime))
+    await new Promise((r) => setTimeout(r, toWaitTime * 1000))
 
     // Fetch again
     logger.debug('Fetch anilist again...')
