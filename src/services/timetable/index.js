@@ -36,6 +36,7 @@ const checkNewSchedule = async () => {
 }
 
 const applyTable = async () => {
+  const anime = new Anime(AnimeModel)
   const timetable = new Timetable(AnimeModel, TimetableModel, Anime)
 
   if (!currentYear || !currentSeason) {
@@ -58,13 +59,18 @@ const applyTable = async () => {
   logger.info('Getting titles of anime to create schedule...')
 
   for (const day in parsedSchedules) {
-    for (const anime of parsedSchedules[day]) {
+    for (const animeTitles of parsedSchedules[day]) {
       try {
-        logger.debug(`Retrieving: ${anime.title}`)
-        const { titles } = await fetchTMDB(anime.title)
+        logger.debug(`Retrieving: ${animeTitles.title}`)
+
+        const titleToRetrieve = await anime.selectNameToRetrieve(
+          animeTitles.title
+        )
+
+        const { titles } = await fetchTMDB(titleToRetrieve)
 
         for (const title of titles) {
-          anime[`${title.language.toLowerCase()}_title`] = title.title
+          animeTitles[`${title.language.toLowerCase()}_title`] = title.title
         }
       } catch (err) {
         continue
