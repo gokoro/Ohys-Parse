@@ -1,2 +1,13 @@
+Dockerfile
+.dockerignore
+node_modules
+npm-debug.log
+README.md
 .git
 *.md
+.env
+.env.example
+.gitignore
+LICENSE
+THIRD_PARTY_LICENSE
+.github
