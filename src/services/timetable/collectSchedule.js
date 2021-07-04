@@ -37,8 +37,8 @@ const aggravateDividers = ['[', ']']
 const comments = ['//', '/{', '/ [', ' / ']
 
 const replaceDividers = (text) => {
-  text = text.replace(/【\s|「\s|『\s/gi, '[')
-  text = text.replace(/\s\】|\s\」|\s\』/gi, ']')
+  text = text.replace(/【|「|『/gi, '[')
+  text = text.replace(/\】|\」|\』/gi, ']')
 
   return text
 }
