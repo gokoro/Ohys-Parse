@@ -1,3 +1,4 @@
+const sonic = require('../sonic')
 const logger = require('../../loaders/logger')
 
 class Anime {
@@ -11,6 +12,32 @@ class Anime {
 
     model.items = []
     await model.save()
+
+    const seriesId = await this.getSeriesKey(form.name)
+
+    // Romaji
+    await sonic.insert({
+      collection: 'anime',
+      bucket: 'default',
+      key: seriesId,
+      text: form.title.romaji,
+    })
+
+    // English
+    await sonic.insert({
+      collection: 'anime',
+      bucket: 'default',
+      key: seriesId,
+      text: form.title.english,
+    })
+
+    // Japanese
+    await sonic.insert({
+      collection: 'anime',
+      bucket: 'default',
+      key: seriesId,
+      text: form.title.japanese,
+    })
   }
   async isSeriesExist(name) {
     const Model = this.Model
@@ -57,6 +84,10 @@ class Anime {
     ])
 
     return titleField.title.as || fileName
+  }
+  async getSeriesKey(name) {
+    const Model = this.Model
+    return await Model.findOne({ name: name }).select(['_id'])
   }
 }
 module.exports = Anime

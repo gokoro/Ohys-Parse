@@ -484,6 +484,11 @@ sliced@1.0.1:
   resolved "https://registry.yarnpkg.com/sliced/-/sliced-1.0.1.tgz#0b3a662b5d04c3177b1926bea82b03f837a2ef41"
   integrity sha1-CzpmK10Ewxd7GSa+qCsD+Dei70E=
 
+sonic-channel@^1.2.6:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/sonic-channel/-/sonic-channel-1.2.6.tgz#b8ae761eeaa5a3854f073f0865309103d2eefb52"
+  integrity sha512-vJaC27/bYvd2v2ZKx6njHoQGxoLOHLjXHc7XF+3BAyNSULJ/A1lYyJkCdVgskvpIfpX5khpsg0aWAT4sORppSA==
+
 sparse-bitfield@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/sparse-bitfield/-/sparse-bitfield-3.0.3.tgz#ff4ae6e68656056ba4b3e792ab3334d38273ca11"

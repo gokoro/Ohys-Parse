@@ -18,6 +18,7 @@
     "dotenv": "^8.2.0",
     "mongoose": "^5.9.28",
     "nanoid": "^3.1.20",
+    "sonic-channel": "^1.2.6",
     "winston": "^3.3.3"
   }
 }
