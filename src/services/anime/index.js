@@ -5,16 +5,26 @@ const AnimeModel = require('../../models/animes')
 const Anime = require('./Anime')
 
 const logger = require('../../loaders/logger')
+const config = require('../../config')
 
 const ohysFetch = require('../ohys/fetch')
 const ohysCollectAll = require('../ohys/collectAll')
+const nyaaCollectAll = require('../nyaa/collectAll')
 const registerLogic = require('./registerLogic')
 
 module.exports.start = async function () {
   const anime = new Anime(AnimeModel)
 
   logger.info('Start collecting all the pages of ohys...')
-  await ohysCollectAll()
+  logger.info(`The platform to collect from: ${config.usedPlatform}`)
+
+  if (config.usedPlatform === 'nyaa') {
+    await nyaaCollectAll()
+  }
+
+  if (config.usedPlatform === 'ohys') {
+    await ohysCollectAll()
+  }
 
   logger.info('Start fetching ohys in automation...')
 
