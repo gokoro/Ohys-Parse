@@ -16,36 +16,13 @@ mongooseLoader().then(async () => {
     }
 
     for await (const item of fullTitleList) {
-      if (!item._id) {
-        continue
-      }
+      const promiseList = [
+        sonic.insertToAnime(item._id, item.title.romaji),
+        sonic.insertToAnime(item._id, item.title.english),
+        sonic.insertToAnime(item._id, item.title.japanese),
+      ]
 
-      if (item.title.romaji) {
-        await sonic.insert({
-          collection: 'anime',
-          bucket: 'default',
-          key: item._id,
-          text: item.title.romaji,
-        })
-      }
-
-      if (item.title.english) {
-        await sonic.insert({
-          collection: 'anime',
-          bucket: 'default',
-          key: item._id,
-          text: item.title.english,
-        })
-      }
-
-      if (item.title.japanese) {
-        await sonic.insert({
-          collection: 'anime',
-          bucket: 'default',
-          key: item._id,
-          text: item.title.japanese,
-        })
-      }
+      await Promise.all(promiseList)
     }
   }
 })

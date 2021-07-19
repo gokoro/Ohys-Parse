@@ -6,6 +6,7 @@ class Anime {
     this.Model = Model
   }
   async insertSeries(form) {
+    // MongoDB
     logger.silly(`Series inserted: ` + JSON.stringify(form))
 
     const model = new this.Model(form)
@@ -13,31 +14,16 @@ class Anime {
     model.items = []
     await model.save()
 
+    // Sonic Search
     const seriesId = await this.getSeriesKey(form.name)
 
-    // Romaji
-    await sonic.insert({
-      collection: 'anime',
-      bucket: 'default',
-      key: seriesId,
-      text: form.title.romaji,
-    })
+    const sonicPromiseList = [
+      sonic.insertToAnime(seriesId, form.title.romaji),
+      sonic.insertToAnime(seriesId, form.title.english),
+      sonic.insertToAnime(seriesId, form.title.japanese),
+    ]
 
-    // English
-    await sonic.insert({
-      collection: 'anime',
-      bucket: 'default',
-      key: seriesId,
-      text: form.title.english,
-    })
-
-    // Japanese
-    await sonic.insert({
-      collection: 'anime',
-      bucket: 'default',
-      key: seriesId,
-      text: form.title.japanese,
-    })
+    await Promise.all(sonicPromiseList)
   }
   async isSeriesExist(name) {
     const Model = this.Model
@@ -90,4 +76,5 @@ class Anime {
     return await Model.findOne({ name: name }).select(['_id'])
   }
 }
+
 module.exports = Anime
