@@ -29,5 +29,5 @@ module.exports = {
 
   tmdbApiKey: process.env.TMDB_API_KEY || '',
 
-  usedPlatform: process.env.USED_PLATFORM === 'nyaa' ? 'nyaa' : 'ohys', // Default: nyaa, option 'nyaa' | 'ohys'
+  usedPlatform: process.env.USED_PLATFORM === 'ohys' ? 'ohys' : 'nyaa', // Default: nyaa, option 'nyaa' | 'ohys'
 }
