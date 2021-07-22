@@ -73,7 +73,9 @@ class Anime {
   }
   async getSeriesKey(name) {
     const Model = this.Model
-    return await Model.findOne({ name: name }).select(['_id'])
+    const res = await Model.findOne({ name: name }).select(['_id'])
+
+    return res._id
   }
 }
 
