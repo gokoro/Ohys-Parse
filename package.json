@@ -9,7 +9,8 @@
     "start:dev": "cross-env NODE_ENV=development nodemon src/app.js",
     "parsing": "yarn parsing:anime && yarn parsing:schedule",
     "parsing:anime": "node scripts/parsing-anime.js",
-    "parsing:schedule": "node scripts/parsing-schedule.js"
+    "parsing:schedule": "node scripts/parsing-schedule.js",
+    "parsing:sonic": "node scripts/sonic-initialize.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
