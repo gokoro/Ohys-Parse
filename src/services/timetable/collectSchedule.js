@@ -6,32 +6,33 @@ const axios = require('axios').default
 const { currentYear, currentSeason, ohysGithubUrl } = require('../../config')
 
 const days = [
-  '月',
-  '火',
-  '水',
-  '木',
-  '金',
-  '土',
-  '日',
-  'SP',
-  '월',
-  '화',
-  '수',
-  '목',
-  '금',
-  '토',
-  '일',
-  'SP',
-  'MON',
-  'TUE',
-  'WED',
-  'THU',
-  'FRI',
-  'SAT',
-  'SUN',
-  'SP',
-  'UNK',
+  ['月'],
+  ['火'],
+  ['水'],
+  ['木'],
+  ['金', '金'],
+  ['土'],
+  ['日'],
+  ['SP'],
+  ['월'],
+  ['화'],
+  ['수'],
+  ['목'],
+  ['금'],
+  ['토'],
+  ['일'],
+  ['SP'],
+  ['MON'],
+  ['TUE'],
+  ['WED'],
+  ['THU'],
+  ['FRI'],
+  ['SAT'],
+  ['SUN'],
+  ['SP'],
+  ['UNK'],
 ]
+
 const dividers = ['/', '[', ']']
 const aggravateDividers = ['[', ']']
 const comments = ['//', '/{', '/ [', ' / ']
@@ -85,10 +86,11 @@ const parseSchedule = async (opts = {}) => {
 
     // NOTE: if current line is representing day;
     for (let k = 0, s = days.length; k < s; k++) {
-      if (line.toUpperCase().startsWith(days[k])) {
-        day = k % 8
-
-        continue
+      for (const dayCognizer of days[k]) {
+        if (line.toUpperCase().startsWith(dayCognizer)) {
+          day = k % 8
+          break
+        }
       }
     }
 
