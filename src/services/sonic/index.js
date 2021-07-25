@@ -13,3 +13,24 @@ module.exports.insertToAnime = async (id, title) => {
     text: title,
   })
 }
+
+module.exports.isValid = (title) => {
+  for (const regex of denyWords) {
+    if (regex.test(title)) {
+      return false
+    }
+  }
+
+  return true
+}
+
+const denyWords = [
+  /OVA/,
+  /OAD/,
+  /SP/,
+  /OP/,
+  /ED/,
+  /Preview/,
+  /- [0-9]{2,}/,
+  /-[0-9]{2,}/,
+]

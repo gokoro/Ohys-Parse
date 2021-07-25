@@ -11,11 +11,12 @@ mongooseLoader().then(async () => {
       .skip((i - 1) * 100)
       .limit(100)
 
-    if (fullTitleList.length < 100) {
-      return
-    }
-
     for await (const item of fullTitleList) {
+      // Title check for searching
+      if (!sonic.isValid(item.name)) {
+        return
+      }
+
       const promiseList = [
         sonic.insertToAnime(item._id, item.title.romaji),
         sonic.insertToAnime(item._id, item.title.english),
