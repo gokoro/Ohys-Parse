@@ -15,7 +15,7 @@ mongooseLoader().then(async () => {
       .limit(100)
 
     if (fullTitleList.length === 0) {
-      return
+      process.exit(0)
     }
 
     for await (const item of fullTitleList) {
