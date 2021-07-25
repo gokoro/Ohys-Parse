@@ -18,11 +18,12 @@ class Anime {
     const seriesId = await this.getSeriesKey(form.name)
 
     // Title check for searching
-    if (!sonic.isValid(form.name)) {
+    if (!sonic.isValid(form.name) || !sonic.isValid(form.title.romaji)) {
       return
     }
 
     const sonicPromiseList = [
+      sonic.insertToAnime(seriesId, form.name),
       sonic.insertToAnime(seriesId, form.title.romaji),
       sonic.insertToAnime(seriesId, form.title.english),
       sonic.insertToAnime(seriesId, form.title.japanese),

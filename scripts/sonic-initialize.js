@@ -25,6 +25,7 @@ mongooseLoader().then(async () => {
       }
 
       const promiseList = [
+        sonic.insertToAnime(item._id, item.name),
         sonic.insertToAnime(item._id, item.title.romaji),
         sonic.insertToAnime(item._id, item.title.english),
         sonic.insertToAnime(item._id, item.title.japanese),
