@@ -31,6 +31,7 @@ const denyWords = [
   /OP/,
   /ED/,
   /Preview/,
+  /Gekijouban/,
   /- [0-9]{2,}/,
   /-[0-9]{2,}/,
 ]
