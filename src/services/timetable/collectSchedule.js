@@ -206,6 +206,10 @@ module.exports = async () => {
     let [hour, minute] = time.split(':')
     let isSunOver = false
 
+    if (dayByNumber >= 7) {
+      return
+    }
+
     hour = Number(hour)
     minute = Number(minute)
 
