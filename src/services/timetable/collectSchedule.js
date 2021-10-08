@@ -40,6 +40,8 @@ const comments = ['//', '/{', '/ [', ' / ']
 const replaceDividers = (text) => {
   text = text.replace(/【|「|『/gi, '[')
   text = text.replace(/\】|\」|\』/gi, ']')
+  text = text.replace(/\#/gi, '[')
+  text = text.replace(/\｜/gi, '][')
 
   return text
 }
