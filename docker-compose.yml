@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  db:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: ohys
+
+  sonic:
+    image: valeriansaliou/sonic:v1.3.0
+    restart: always
+    ports:
+      - 1491:1491
+    volumes:
+      - sonic:/var/lib/sonic/store
+      - ./docker/sonic/sonic.cfg:/etc/sonic.cfg
+
+volumes:
+  mongo:
+  sonic:

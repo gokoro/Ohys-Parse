@@ -6,13 +6,8 @@ const fetch = async (page) => {
   const list = []
 
   const response = await axios.get(url)
-  let parsedData = null
+  const parsedData = response.data
 
-  try {
-    parsedData = response.data
-  } catch (err) {
-    return null
-  }
   for (let i = 0; i < parsedData.length; i++) {
     const title = parsedData[i]['t']
     const link = 'https://ohys.nl/tt/' + parsedData[i]['a']
