@@ -50,6 +50,5 @@ const animeSchema = new mongoose.Schema({
     },
   ],
   items: [itemsSchema],
-  moved_to_id: { type: String, default: null },
 })
 module.exports = mongoose.model('Anime', animeSchema)

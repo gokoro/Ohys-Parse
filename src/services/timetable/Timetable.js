@@ -1,5 +1,8 @@
 const fetchAnilist = require('../anilist/fetch')
 
+const Settings = require('../settings/Settings')
+const SettingsModel = require('../../models/setttings')
+
 const logger = require('../../loaders/logger')
 
 module.exports = class {
@@ -10,6 +13,9 @@ module.exports = class {
   }
 
   async insertTable(response) {
+    const settings = new Settings(SettingsModel)
+    const replacedTimetable = await settings.getSetting('replaced_timetable')
+
     for (let day in response) {
       logger.info(`Timetable: Working with ${day} ...`)
 
@@ -20,7 +26,21 @@ module.exports = class {
       const item = response[day]
 
       for (let i = 0; i < item.length; i++) {
-        const nameToRetrieve = item[i].title
+        let nameToRetrieve = item[i].title
+
+        const fetchedAnime = await this.AnimeModel.findOne({
+          name: nameToRetrieve,
+        }).select('_id')
+
+        const movedIds = replacedTimetable.data.find(
+          ({ targetId }) => fetchedAnime._id === targetId
+        )
+
+        if (movedIds) {
+          nameToRetrieve = await this.AnimeModel.findOne({
+            _id: movedIds?.replaceId,
+          }).select('name')
+        }
 
         const seriesData = await this.AnimeModel.findOne({
           name: nameToRetrieve,
@@ -48,11 +68,9 @@ module.exports = class {
           }
         }
 
-        const fetchedAnime = await this.AnimeModel.findOne({
-          name: nameToRetrieve,
-        }).select('_id')
-
-        timetableModel.animes.push(fetchedAnime._id || null)
+        timetableModel.animes.push(
+          movedIds?.replaceId || fetchedAnime._id || null
+        )
 
         await this.updateTable(nameToRetrieve, {
           title: {
