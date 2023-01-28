@@ -5,6 +5,8 @@
   "author": "Gokoro <lincroe@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "deploy": "yarn deploy:fly",
+    "deploy:fly": "flyctl deploy",
     "start": "cross-env NODE_ENV=production node src/app.js",
     "start:dev": "cross-env NODE_ENV=development nodemon src/app.js",
     "parsing": "yarn parsing:anime && yarn parsing:schedule",
