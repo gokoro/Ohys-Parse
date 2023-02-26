@@ -19,6 +19,7 @@
     "cheerio": "^1.0.0-rc.10",
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
+    "meilisearch": "^0.31.1",
     "mongoose": "^5.9.28",
     "nanoid": "^3.1.20",
     "sonic-channel": "^1.2.6",
