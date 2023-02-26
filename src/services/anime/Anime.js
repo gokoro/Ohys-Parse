@@ -1,4 +1,5 @@
 const sonic = require('../sonic')
+const meilisearch = require('../meilisearch')
 const logger = require('../../loaders/logger')
 
 class Anime {
@@ -14,22 +15,15 @@ class Anime {
     model.items = []
     await model.save()
 
-    // Sonic Search
-    const seriesId = await this.getSeriesKey(form.name)
-
     // Title check for searching
-    if (!sonic.isValid(form.name) || !sonic.isValid(form.title.romaji)) {
+    if (
+      !meilisearch.isValid(form.name) ||
+      !meilisearch.isValid(form.title.romaji)
+    ) {
       return
     }
 
-    const sonicPromiseList = [
-      sonic.insertToAnime(seriesId, form.name),
-      sonic.insertToAnime(seriesId, form.title.romaji),
-      sonic.insertToAnime(seriesId, form.title.english),
-      sonic.insertToAnime(seriesId, form.title.japanese),
-    ]
-
-    await Promise.all(sonicPromiseList)
+    await meilisearch.insertToAnime({ data: form })
   }
   async isSeriesExist(name) {
     const Model = this.Model

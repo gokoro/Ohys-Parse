@@ -1,4 +1,5 @@
 const fetchAnilist = require('../anilist/fetch')
+const meilisearch = require('../meilisearch')
 
 const Settings = require('../settings/Settings')
 const SettingsModel = require('../../models/setttings')
@@ -72,7 +73,7 @@ module.exports = class {
           movedIds?.replaceId || fetchedAnime._id || null
         )
 
-        await this.updateTable(nameToRetrieve, {
+        const title = {
           title: {
             romaji: item[i].title,
             japanese: item[i].japanese_title,
@@ -80,9 +81,18 @@ module.exports = class {
             korean: item[i].korean_title,
             as: seriesAsField || '',
           },
-          released_time: item[i].time,
-          release_broadcaster: item[i].broadcaster,
-        })
+        }
+
+        await Promise.all([
+          this.updateTable(nameToRetrieve, {
+            title,
+            released_time: item[i].time,
+            release_broadcaster: item[i].broadcaster,
+          }),
+          meilisearch.insertToAnime({
+            data: { _id: seriesData._id, title },
+          }),
+        ])
 
         logger.debug(`Timetable: Working ${item[i].title}...`)
       }

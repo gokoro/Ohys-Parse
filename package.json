@@ -12,7 +12,8 @@
     "parsing": "yarn parsing:anime && yarn parsing:schedule",
     "parsing:anime": "node scripts/parsing-anime.js",
     "parsing:schedule": "node scripts/parsing-schedule.js",
-    "parsing:sonic": "node scripts/sonic-initialize.js"
+    "parsing:sonic": "node scripts/sonic-initialize.js",
+    "parsing:meilisearch": "node scripts/meilisearch-initialize.js"
   },
   "dependencies": {
     "axios": "^0.21.1",

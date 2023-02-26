@@ -30,4 +30,9 @@ module.exports = {
   tmdbApiKey: process.env.TMDB_API_KEY || '',
 
   usedPlatform: process.env.USED_PLATFORM === 'ohys' ? 'ohys' : 'nyaa', // Default: nyaa, option 'nyaa' | 'ohys'
+
+  meilisearch: {
+    host: process.env.MEILISEARCH_HOST,
+    key: process.env.MEILISEARCH_KEY,
+  },
 }
