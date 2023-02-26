@@ -1,5 +1,4 @@
 const mongooseLoader = require('./mongoose')
-const sonicLoader = require('./sonic')
 const server = require('./server')
 const services = require('../services')
 const config = require('../config')

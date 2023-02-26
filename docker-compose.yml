@@ -12,16 +12,13 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
       MONGO_INITDB_DATABASE: ohys
-
-  sonic:
-    image: valeriansaliou/sonic:v1.3.0
-    restart: always
+  meilisearch:
+    image: getmeili/meilisearch:latest
     ports:
-      - 1491:1491
+      - 7700:7700
     volumes:
-      - sonic:/var/lib/sonic/store
-      - ./docker/sonic/sonic.cfg:/etc/sonic.cfg
+      - meilisearch:/meili_data
 
 volumes:
   mongo:
-  sonic:
+  meilisearch:

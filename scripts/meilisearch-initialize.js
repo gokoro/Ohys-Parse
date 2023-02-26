@@ -1,5 +1,3 @@
-// Execute this if Sonic is empty
-
 const mongooseLoader = require('../src/loaders/mongoose')
 const meilisearch = require('../src/services/meilisearch')
 const logger = require('../src/loaders/logger')

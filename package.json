@@ -12,7 +12,6 @@
     "parsing": "yarn parsing:anime && yarn parsing:schedule",
     "parsing:anime": "node scripts/parsing-anime.js",
     "parsing:schedule": "node scripts/parsing-schedule.js",
-    "parsing:sonic": "node scripts/sonic-initialize.js",
     "parsing:meilisearch": "node scripts/meilisearch-initialize.js"
   },
   "dependencies": {
@@ -23,7 +22,6 @@
     "meilisearch": "^0.31.1",
     "mongoose": "^5.9.28",
     "nanoid": "^3.1.20",
-    "sonic-channel": "^1.2.6",
     "winston": "^3.3.3"
   }
 }

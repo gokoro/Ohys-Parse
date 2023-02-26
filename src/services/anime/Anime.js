@@ -1,4 +1,3 @@
-const sonic = require('../sonic')
 const meilisearch = require('../meilisearch')
 const logger = require('../../loaders/logger')
 
