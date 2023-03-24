@@ -74,14 +74,13 @@ module.exports = class {
         )
 
         const title = {
-          title: {
-            romaji: item[i].title,
-            japanese: item[i].japanese_title,
-            english: item[i].english_title,
-            korean: item[i].korean_title,
-            as: seriesAsField || '',
-          },
+          romaji: item[i].title,
+          japanese: item[i].japanese_title,
+          english: item[i].english_title,
+          korean: item[i].korean_title,
+          as: seriesAsField || '',
         }
+        console.log('title:', title)
 
         await Promise.all([
           this.updateTable(nameToRetrieve, {
