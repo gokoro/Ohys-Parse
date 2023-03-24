@@ -80,7 +80,6 @@ module.exports = class {
           korean: item[i].korean_title,
           as: seriesAsField || '',
         }
-        console.log('title:', title)
 
         await Promise.all([
           this.updateTable(nameToRetrieve, {
