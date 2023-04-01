@@ -33,9 +33,13 @@ module.exports = class {
           name: nameToRetrieve,
         }).select('_id')
 
-        const movedIds = replacedTimetable.data.find(
-          ({ targetId }) => fetchedAnime._id === targetId
-        )
+        let movedIds
+
+        if (fetchedAnime) {
+          movedIds = replacedTimetable.data.find(
+            ({ targetId }) => fetchedAnime._id === targetId
+          )
+        }
 
         if (movedIds) {
           nameToRetrieve = await this.AnimeModel.findOne({
