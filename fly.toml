@@ -5,7 +5,7 @@ processes = []
 
 [env]
   CURRENT_YEAR=2023
-  CURRENT_SEASON=1
+  CURRENT_SEASON=2
 
 [build]
   image = "ghcr.io/gokoro/ohys-parse:latest"
